@@ -1,0 +1,12 @@
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\bin\Debug\net8.0\University.Models.deps.json
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\bin\Debug\net8.0\University.Models.dll
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\bin\Debug\net8.0\University.Models.pdb
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\University.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\University.Models.AssemblyInfoInputs.cache
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\University.Models.AssemblyInfo.cs
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\University.Models.csproj.CoreCompileInputs.cache
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\University.Models.sourcelink.json
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\University.Models.dll
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\refint\University.Models.dll
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\University.Models.pdb
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\ref\University.Models.dll

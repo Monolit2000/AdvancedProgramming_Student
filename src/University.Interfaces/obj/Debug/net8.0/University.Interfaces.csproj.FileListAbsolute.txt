@@ -1,0 +1,12 @@
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\bin\Debug\net8.0\University.Interfaces.deps.json
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\bin\Debug\net8.0\University.Interfaces.dll
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\bin\Debug\net8.0\University.Interfaces.pdb
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.AssemblyInfoInputs.cache
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.AssemblyInfo.cs
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.csproj.CoreCompileInputs.cache
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.sourcelink.json
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.dll
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\refint\University.Interfaces.dll
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.pdb
+E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\ref\University.Interfaces.dll
