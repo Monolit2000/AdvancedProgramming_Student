@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="AddAthleticsFacilityView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AddBookView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -11,7 +14,13 @@
     <Compile Update="AddStudentOrganizationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="AthleticsFacilityView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="BookView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditAthleticsFacilityView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="EditBookView.xaml.cs">
@@ -40,6 +49,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AddAthleticsFacilityView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AddBookView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -49,7 +61,13 @@
     <Page Update="AddStudentOrganizationView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="AthleticsFacilityView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="BookView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditAthleticsFacilityView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EditBookView.xaml">

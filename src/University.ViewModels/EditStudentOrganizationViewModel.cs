@@ -13,7 +13,7 @@ namespace University.ViewModels
     {
         private readonly UniversityContext _context;
         private readonly IDialogService _dialogService;
-        private StudentOrganization? _organization;
+        private StudentOrganization? _studentOrganization = new StudentOrganization();
 
         public string Error => string.Empty;
 
@@ -23,12 +23,32 @@ namespace University.ViewModels
             {
                 if (columnName == "Name")
                 {
-                    if (string.IsNullOrEmpty(_name))
+                    if (string.IsNullOrEmpty(Name))
                     {
                         return "Name is Required";
                     }
                 }
-                // Add validation for other properties if needed
+                if (columnName == "Advisor")
+                {
+                    if (string.IsNullOrEmpty(Advisor))
+                    {
+                        return "Advisor is Required";
+                    }
+                }
+                if (columnName == "President")
+                {
+                    if (string.IsNullOrEmpty(President))
+                    {
+                        return "President is Required";
+                    }
+                }
+                if (columnName == "Email")
+                {
+                    if (string.IsNullOrEmpty(Email))
+                    {
+                        return "Email is Required";
+                    }
+                }
                 return string.Empty;
             }
         }
@@ -110,15 +130,15 @@ namespace University.ViewModels
             }
         }
 
-        private long _organizationId = 0;
-        public long OrganizationId
+        private long _studentOrganizationId = 0;
+        public long StudentOrganizationId
         {
-            get => _organizationId;
+            get => _studentOrganizationId;
             set
             {
-                _organizationId = value;
-                OnPropertyChanged(nameof(OrganizationId));
-                LoadOrganizationData();
+                _studentOrganizationId = value;
+                OnPropertyChanged(nameof(StudentOrganizationId));
+                LoadStudentOrganizationData();
             }
         }
 
@@ -178,11 +198,11 @@ namespace University.ViewModels
             var instance = MainWindowViewModel.Instance();
             if (instance is not null)
             {
-                instance.SubjectsSubView = new SubjectsViewModel(_context, _dialogService);
+                instance.StudentOrganizationSubView = new StudentOrganizationViewModel(_context, _dialogService);
             }
         }
 
-        private ICommand? _add;
+        private ICommand? _add = null;
         public ICommand Add
         {
             get
@@ -251,19 +271,20 @@ namespace University.ViewModels
                 return;
             }
 
-            if (_organization is null)
+            if (_studentOrganization is null)
             {
                 return;
             }
 
-            _organization.Name = Name;
-            _organization.Advisor = Advisor;
-            _organization.President = President;
-            _organization.Description = Description;
-            _organization.MeetingSchedule = MeetingSchedule;
-            _organization.Email = Email;
+            _studentOrganization.Name = Name;
+            _studentOrganization.Advisor = Advisor;
+            _studentOrganization.President = President;
+            _studentOrganization.Description = Description;
+            _studentOrganization.MeetingSchedule = MeetingSchedule;
+            _studentOrganization.Email = Email;
+            _studentOrganization.Students = AssignedStudents;
 
-            _context.Entry(_organization).State = EntityState.Modified;
+            _context.Entry(_studentOrganization).State = EntityState.Modified;
             _context.SaveChanges();
 
             Response = "Data Saved";
@@ -284,24 +305,38 @@ namespace University.ViewModels
 
         private bool IsValid()
         {
-            return !string.IsNullOrEmpty(_name) &&
-                   !string.IsNullOrEmpty(_advisor) &&
-                   !string.IsNullOrEmpty(_president) &&
-                   !string.IsNullOrEmpty(_email);
-            // Add more validation rules if needed
+            string[] properties = { "Name", "Advisor", "President", "Email" };
+            foreach (string property in properties)
+            {
+                if (!string.IsNullOrEmpty(this[property]))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
-        private void LoadOrganizationData()
+        private void LoadStudentOrganizationData()
         {
-            _organization = _context.StudentOrganizations.Find(OrganizationId);
-            if (_organization != null)
+            var studentOrganizations = _context.StudentOrganizations;
+            if (studentOrganizations is not null)
             {
-                Name = _organization.Name;
-                Advisor = _organization.Advisor;
-                President = _organization.President;
-                Description = _organization.Description;
-                MeetingSchedule = _organization.MeetingSchedule;
-                Email = _organization.Email;
+                _studentOrganization = studentOrganizations.Find(StudentOrganizationId);
+                if (_studentOrganization is null)
+                {
+                    return;
+                }
+                this.Name = _studentOrganization.Name;
+                this.Advisor = _studentOrganization.Advisor;
+                this.President = _studentOrganization.President;
+                this.Description = _studentOrganization.Description;
+                this.MeetingSchedule = _studentOrganization.MeetingSchedule;
+                this.Email = _studentOrganization.Email;
+                if (_studentOrganization.Students is not null)
+                {
+                    this.AssignedStudents =
+                        new ObservableCollection<Student>(_studentOrganization.Students);
+                }
             }
         }
     }

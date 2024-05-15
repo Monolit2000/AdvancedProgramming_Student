@@ -52,7 +52,7 @@ namespace University.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/University.Views;V1.0.0.0;component/editstudentview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/University.Views;component/editstudentview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\EditStudentView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

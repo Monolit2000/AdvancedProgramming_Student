@@ -76,8 +76,21 @@
     <DataTemplate DataType="{x:Type viewmodels:EditStudentOrganizationViewModel}">
         <views:EditStudentOrganizationView />
     </DataTemplate>
-    
-    
+
+
+    <DataTemplate DataType="{x:Type viewmodels:EditAthleticsFacilityViewModel}">
+        <views:EditAthleticsFacilityView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewmodels:AthleticsFacilitysViewModel}">
+        <views:AthleticsFacilityView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewmodels:AddAthleticsFacilityViewModel}">
+        <views:AddAthleticsFacilityView />
+    </DataTemplate>
+
+
     <DataTemplate DataType="{x:Type viewmodels:AddSubjectViewModel}">
         <views:AddSubjectView />
     </DataTemplate>

@@ -120,3 +120,9 @@ C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\AddStudentOrganizationView.g.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\EditStudentOrganizationView.g.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\StudentOrganizationView.g.cs
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\AddAthleticsFacilityView.baml
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\AthleticsFacilityView.baml
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\EditAthleticsFacilityView.baml
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\AddAthleticsFacilityView.g.cs
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\AthleticsFacilityView.g.cs
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\EditAthleticsFacilityView.g.cs

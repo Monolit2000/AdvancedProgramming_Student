@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.ObjectModel;
+using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Input;
 using University.Data;
 using University.Interfaces;
@@ -20,14 +20,30 @@ namespace University.ViewModels
         {
             get
             {
-                if (columnName == "Name")
+                if (columnName == "Name" && string.IsNullOrEmpty(Name))
                 {
-                    if (string.IsNullOrEmpty(Name))
-                    {
-                        return "Name is Required";
-                    }
+                    return "Name is Required";
                 }
-                // Add validation for other properties as needed
+                if (columnName == "Advisor" && string.IsNullOrEmpty(Advisor))
+                {
+                    return "Advisor is Required";
+                }
+                if (columnName == "President" && string.IsNullOrEmpty(President))
+                {
+                    return "President is Required";
+                }
+                if (columnName == "Description" && string.IsNullOrEmpty(Description))
+                {
+                    return "Description is Required";
+                }
+                if (columnName == "MeetingSchedule" && string.IsNullOrEmpty(MeetingSchedule))
+                {
+                    return "Meeting Schedule is Required";
+                }
+                if (columnName == "Email" && string.IsNullOrEmpty(Email))
+                {
+                    return "Email is Required";
+                }
                 return string.Empty;
             }
         }
@@ -43,7 +59,60 @@ namespace University.ViewModels
             }
         }
 
-        // Add other properties as needed for StudentOrganization
+        private string _advisor = string.Empty;
+        public string Advisor
+        {
+            get => _advisor;
+            set
+            {
+                _advisor = value;
+                OnPropertyChanged(nameof(Advisor));
+            }
+        }
+
+        private string _president = string.Empty;
+        public string President
+        {
+            get => _president;
+            set
+            {
+                _president = value;
+                OnPropertyChanged(nameof(President));
+            }
+        }
+
+        private string _description = string.Empty;
+        public string Description
+        {
+            get => _description;
+            set
+            {
+                _description = value;
+                OnPropertyChanged(nameof(Description));
+            }
+        }
+
+        private string _meetingSchedule = string.Empty;
+        public string MeetingSchedule
+        {
+            get => _meetingSchedule;
+            set
+            {
+                _meetingSchedule = value;
+                OnPropertyChanged(nameof(MeetingSchedule));
+            }
+        }
+
+        private string _email = string.Empty;
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                _email = value;
+                OnPropertyChanged(nameof(Email));
+            }
+        }
 
         private string _response = string.Empty;
         public string Response
@@ -56,38 +125,30 @@ namespace University.ViewModels
             }
         }
 
-        // Add other properties and collections as needed for Students
-
         private ICommand? _back = null;
-        public ICommand Back => _back ??= new RelayCommand<object>(NavigateBack);
+        public ICommand? Back
+        {
+            get
+            {
+                if (_back is null)
+                {
+                    _back = new RelayCommand<object>(NavigateBack);
+                }
+                return _back;
+            }
+        }
 
         private void NavigateBack(object? obj)
         {
             var instance = MainWindowViewModel.Instance();
             if (instance is not null)
             {
-                // Navigate back logic
+                instance.StudentOrganizationSubView = new StudentOrganizationViewModel(_context, _dialogService);
             }
         }
 
-        private ICommand? _add = null;
-        public ICommand Add => _add ??= new RelayCommand<object>(AddStudent);
-
-        private void AddStudent(object? obj)
-        {
-            // Add logic to add a student to the organization
-        }
-
-        private ICommand? _remove = null;
-        public ICommand Remove => _remove ??= new RelayCommand<object>(RemoveStudent);
-
-        private void RemoveStudent(object? obj)
-        {
-            // Add logic to remove a student from the organization
-        }
-
-        private ICommand? _save = null;
-        public ICommand Save => _save ??= new RelayCommand<object>(SaveData);
+        private ICommand? _saveCommand = null;
+        public ICommand Save => _saveCommand ??= new RelayCommand<object>(SaveData);
 
         private void SaveData(object? obj)
         {
@@ -97,7 +158,20 @@ namespace University.ViewModels
                 return;
             }
 
-            // Add logic to save the StudentOrganization to the database
+            var organization = new StudentOrganization
+            {
+                Name = Name,
+                Advisor = Advisor,
+                President = President,
+                Description = Description,
+                MeetingSchedule = MeetingSchedule,
+                Email = Email
+            };
+
+            _context.StudentOrganizations.Add(organization);
+            _context.SaveChanges();
+
+            Response = "Data Saved";
         }
 
         public AddStudentOrganizationViewModel(UniversityContext context, IDialogService dialogService)
@@ -106,14 +180,12 @@ namespace University.ViewModels
             _dialogService = dialogService;
         }
 
-        // Add other methods as needed
-
         private bool IsValid()
         {
-            string[] properties = { "Name" };
+            string[] properties = { "Name", "Advisor", "President", "Description", "MeetingSchedule", "Email" };
             foreach (string property in properties)
             {
-                if (string.IsNullOrEmpty(this[property]))
+                if (!string.IsNullOrEmpty(this[property]))
                 {
                     return false;
                 }

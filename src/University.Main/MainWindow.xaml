@@ -41,6 +41,10 @@
                 <ContentControl Content="{Binding StudentOrganizationSubView}" />
             </TabItem>
 
+            <TabItem Header="AthleticsFacility" Tag="&#xE779;">
+                <ContentControl Content="{Binding AthleticsFacilitySubView}" />
+            </TabItem>
+
 
         </TabControl>
     </Grid>

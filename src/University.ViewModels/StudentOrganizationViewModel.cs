@@ -13,39 +13,39 @@ namespace University.ViewModels
         private readonly UniversityContext _context;
         private readonly IDialogService _dialogService;
 
-        private bool? dialogResult;
+        private ObservableCollection<StudentOrganization>? _organizations = null;
+        public ObservableCollection<StudentOrganization>? Organizations
+        {
+            get
+            {
+                if (_organizations is null)
+                {
+                    _organizations = new ObservableCollection<StudentOrganization>();
+                    return _organizations;
+                }
+                return _organizations;
+            }
+            set
+            {
+                _organizations = value;
+                OnPropertyChanged(nameof(Organizations));
+            }
+        }
+
+        private bool? _dialogResult = null;
         public bool? DialogResult
         {
             get
             {
-                return dialogResult;
+                return _dialogResult;
             }
             set
             {
-                dialogResult = value;
+                _dialogResult = value;
             }
         }
 
-        private ObservableCollection<StudentOrganization>? organizations;
-        public ObservableCollection<StudentOrganization> Organizations
-        {
-            get
-            {
-                if (organizations is null)
-                {
-                    organizations = new ObservableCollection<StudentOrganization>();
-                    return organizations;
-                }
-                return organizations;
-            }
-            set
-            {
-                organizations = value;
-                OnPropertyChanged(nameof(organizations));
-            }
-        }
-
-        private ICommand? _add;
+        private ICommand? _add = null;
         public ICommand? Add
         {
             get
@@ -63,11 +63,11 @@ namespace University.ViewModels
             var instance = MainWindowViewModel.Instance();
             if (instance is not null)
             {
-                instance.SubjectsSubView = new AddStudentOrganizationViewModel(_context, _dialogService);
-            }
+                instance.StudentOrganizationSubView = new AddStudentOrganizationViewModel(_context, _dialogService);
+            };
         }
 
-        private ICommand? _edit;
+        private ICommand? _edit = null;
         public ICommand? Edit
         {
             get
@@ -82,10 +82,22 @@ namespace University.ViewModels
 
         private void EditOrganization(object? obj)
         {
-            // Add logic for editing an organization
+            if (obj is not null)
+            {
+                long studentOrganizationId = (long)obj;
+                EditStudentOrganizationViewModel editStudentOrganizationViewModel = new EditStudentOrganizationViewModel(_context, _dialogService)
+                {
+                    StudentOrganizationId = studentOrganizationId
+                };
+                var instance = MainWindowViewModel.Instance();
+                if (instance is not null)
+                {
+                    instance.StudentOrganizationSubView = editStudentOrganizationViewModel;
+                }
+            }
         }
 
-        private ICommand? _remove;
+        private ICommand? _remove = null;
         public ICommand? Remove
         {
             get
@@ -100,7 +112,22 @@ namespace University.ViewModels
 
         private void RemoveOrganization(object? obj)
         {
-            // Add logic for removing an organization
+            if (obj is not null)
+            {
+                long studentOrganizationId = (long)obj;
+                StudentOrganization? studentOrganization = _context.StudentOrganizations.Find(studentOrganizationId);
+                if (studentOrganization is not null)
+                {
+                    DialogResult = _dialogService.Show(studentOrganization.Name + " " + studentOrganization.Description);
+                    if (DialogResult == false)
+                    {
+                        return;
+                    }
+
+                    _context.StudentOrganizations.Remove(studentOrganization);
+                    _context.SaveChanges();
+                }
+            }
         }
 
         public StudentOrganizationViewModel(UniversityContext context, IDialogService dialogService)
