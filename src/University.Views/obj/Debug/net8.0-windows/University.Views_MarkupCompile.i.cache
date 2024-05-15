@@ -4,17 +4,17 @@
 library
 C#
 .cs
-E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Views\obj\Debug\net8.0-windows\
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\
 University.Views
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 
-12-241422796
+21-2064228379
 
-12-1649711765
-2451545005662
-AddResearchProjectView.xaml;AddStudentView.xaml;AddSubjectView.xaml;DataTemplates.xaml;EditResearchProjectView.xaml;EditStudentView.xaml;EditSubjectView.xaml;ResearchProjectView.xaml;SearchView.xaml;SharedResources.xaml;StudentsView.xaml;SubjectsView.xaml;
+21-1587105189
+245-141623238
+AddBookView.xaml;AddLibraryView.xaml;AddResearchProjectView.xaml;AddStudentOrganizationView.xaml;AddStudentView.xaml;AddSubjectView.xaml;BookView.xaml;DataTemplates.xaml;EditBookView.xaml;EditLibraryView.xaml;EditResearchProjectView.xaml;EditStudentOrganizationView.xaml;EditStudentView.xaml;EditSubjectView.xaml;LibraryView.xaml;ResearchProjectView.xaml;SearchView.xaml;SharedResources.xaml;StudentOrganizationView.xaml;StudentsView.xaml;SubjectsView.xaml;
 
 True
 

@@ -10,3 +10,15 @@ E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\U
 E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\refint\University.Models.dll
 E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\University.Models.pdb
 E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Models\obj\Debug\net8.0\ref\University.Models.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\bin\Debug\net8.0\University.Models.deps.json
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\bin\Debug\net8.0\University.Models.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\bin\Debug\net8.0\University.Models.pdb
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\obj\Debug\net8.0\University.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\obj\Debug\net8.0\University.Models.AssemblyInfoInputs.cache
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\obj\Debug\net8.0\University.Models.AssemblyInfo.cs
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\obj\Debug\net8.0\University.Models.csproj.CoreCompileInputs.cache
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\obj\Debug\net8.0\University.Models.sourcelink.json
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\obj\Debug\net8.0\University.Models.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\obj\Debug\net8.0\refint\University.Models.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\obj\Debug\net8.0\University.Models.pdb
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Models\obj\Debug\net8.0\ref\University.Models.dll

@@ -16,4 +16,8 @@
     <ProjectReference Include="..\University.Interfaces\University.Interfaces.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="LibrarysSub\" />
+  </ItemGroup>
+
 </Project>

@@ -2,6 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:views="clr-namespace:University.Views"
                     xmlns:viewmodels="clr-namespace:University.ViewModels;assembly=University.ViewModels">
+    
+    
+    
+    
+    
     <DataTemplate DataType="{x:Type viewmodels:StudentsViewModel}">
         <views:StudentsView />
     </DataTemplate>
@@ -14,6 +19,65 @@
     <DataTemplate DataType="{x:Type viewmodels:EditStudentViewModel}">
         <views:EditStudentView />
     </DataTemplate>
+
+    
+
+    <DataTemplate DataType="{x:Type viewmodels:AddResearchProjectViewModel}">
+        <views:AddResearchProjectView />
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type viewmodels:EditResearchProjectViewModel}">
+        <views:EditResearchProjectView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewmodels:ResearchProjectViewModel}">
+        <views:ResearchProjectView />
+    </DataTemplate>
+
+    
+
+
+    <DataTemplate DataType="{x:Type viewmodels:AddBookViewModel}">
+        <views:AddBookView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewmodels:BookViewModel}">
+        <views:BookView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewmodels:EditBookViewModel}">
+        <views:EditBookView />
+    </DataTemplate>
+
+    
+
+    <DataTemplate DataType="{x:Type viewmodels:EditLibraryViewModel}">
+        <views:EditLibraryView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewmodels:AddLibraryViewModel}">
+        <views:AddLibraryView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewmodels:LibraryViewModel}">
+        <views:LibraryView />
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type viewmodels:StudentOrganizationViewModel}">
+        <views:StudentOrganizationView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewmodels:AddStudentOrganizationViewModel}">
+        <views:AddStudentOrganizationView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewmodels:EditStudentOrganizationViewModel}">
+        <views:EditStudentOrganizationView />
+    </DataTemplate>
+    
+    
     <DataTemplate DataType="{x:Type viewmodels:AddSubjectViewModel}">
         <views:AddSubjectView />
     </DataTemplate>
@@ -23,4 +87,6 @@
     <DataTemplate DataType="{x:Type viewmodels:SearchViewModel}">
         <views:SearchView />
     </DataTemplate>
+    
+    
 </ResourceDictionary>

@@ -9,4 +9,7 @@
         <ResourceDictionary Source="/University.Views;component/DataTemplates.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+
+
 </ResourceDictionary>
+

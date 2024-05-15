@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="University.Views.EditLibraryView"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/University.Views;component/SharedResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!-- Кнопка "Back" -->
+        <Button Content="Back" Grid.Row="0" Grid.Column="0" Command="{Binding Back}" Margin="5,5,5,0" Width="100" HorizontalAlignment="Left" Style="{StaticResource PrimaryButton}" Tag="&#xE72B;" />
+        <!-- Кнопка "Save" -->
+        <Button Content="Save" Grid.Row="0" Grid.Column="3" Command="{Binding Save}" Margin="5,5,5,0" Width="100" HorizontalAlignment="Right" Style="{StaticResource PrimaryButton}" Tag="&#xE74E;" />
+
+        <!-- Группа с данными о библиотеке -->
+        <GroupBox Header="Subject Data" Grid.Row="1" Grid.Column="0" Margin="5" Padding="10">
+            <StackPanel>
+                <!-- Поле "Name" -->
+                <WrapPanel Margin="0,0,0,5">
+                    <TextBlock Text="Name" Style="{StaticResource PrimaryTextBlock}" />
+                    <TextBox Text="{Binding Name, ValidatesOnDataErrors=True}" Style="{StaticResource PrimaryTextBox}" />
+                </WrapPanel>
+                <!-- Поле "Address" -->
+                <WrapPanel Margin="0,0,0,5">
+                    <TextBlock Text="Address" Style="{StaticResource PrimaryTextBlock}" />
+                    <TextBox Text="{Binding Address, ValidatesOnDataErrors=True}" Style="{StaticResource PrimaryTextBox}" />
+                </WrapPanel>
+                <!-- Поле "Number of Floors" -->
+                <WrapPanel Margin="0,0,0,5">
+                    <TextBlock Text="Number of Floors" Style="{StaticResource PrimaryTextBlock}" />
+                    <TextBox Text="{Binding NumberOfFloors, ValidatesOnDataErrors=True}" Style="{StaticResource PrimaryTextBox}" />
+                </WrapPanel>
+                <!-- Поле "Number of Rooms" -->
+                <WrapPanel Margin="0,0,0,5">
+                    <TextBlock Text="Number of Rooms" Style="{StaticResource PrimaryTextBlock}" />
+                    <TextBox Text="{Binding NumberOfRooms, ValidatesOnDataErrors=True}" Style="{StaticResource PrimaryTextBox}" />
+                </WrapPanel>
+                <!-- Поле "Description" -->
+                <WrapPanel Margin="0,0,0,5">
+                    <TextBlock Text="Description" Style="{StaticResource PrimaryTextBlock}" />
+                    <TextBox Text="{Binding Description, ValidatesOnDataErrors=True}" Style="{StaticResource PrimaryTextBox}" />
+                </WrapPanel>
+                <!-- Поле "Librarian" -->
+                <WrapPanel Margin="0,0,0,5">
+                    <TextBlock Text="Librarian" Style="{StaticResource PrimaryTextBlock}" />
+                    <TextBox Text="{Binding Librarian, ValidatesOnDataErrors=True}" Style="{StaticResource PrimaryTextBox}" />
+                </WrapPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Assigned Books" Grid.Row="1" Grid.Column="1" Margin="0,5,5,5" Padding="10">
+            <ListView x:Name="Assigned" ItemsSource="{Binding AssignedBooks}" BorderThickness="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,0,0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0">
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat=" {0} ">
+                                        <Binding Path="Title"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </GroupBox>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Margin="5">
+            <Button Margin="0,0,0,2" Command="{Binding Add}" CommandParameter="{Binding ElementName=Available, Path=SelectedItem}" Style="{StaticResource SecondaryButton}" Width="22" Height="22" Tag="&#xE760;" />
+            <Button Margin="0,2,0,0" Command="{Binding Remove}" CommandParameter="{Binding ElementName=Assigned, Path=SelectedItem}" Style="{StaticResource SecondaryButton}" Width="22" Height="22" Tag="&#xE760;" />
+        </StackPanel>
+
+        <GroupBox Header="Available Books" Grid.Row="1" Grid.Column="3" Margin="0,5,5,5" Padding="10">
+            <ListView x:Name="Available" ItemsSource="{Binding AvailableBooks}" BorderThickness="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,0,0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0">
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat=" {0} ">
+                                        <Binding Path="Title"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </GroupBox>
+
+        <!-- Отображение ответа -->
+        <TextBlock Text="{Binding Response}" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+    </Grid>
+</UserControl>

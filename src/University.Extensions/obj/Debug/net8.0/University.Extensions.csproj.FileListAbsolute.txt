@@ -10,3 +10,15 @@ E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Extensions\obj\Debug\net8
 E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Extensions\obj\Debug\net8.0\refint\University.Extensions.dll
 E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Extensions\obj\Debug\net8.0\University.Extensions.pdb
 E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Extensions\obj\Debug\net8.0\ref\University.Extensions.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\bin\Debug\net8.0\University.Extensions.deps.json
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\bin\Debug\net8.0\University.Extensions.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\bin\Debug\net8.0\University.Extensions.pdb
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\obj\Debug\net8.0\University.Extensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\obj\Debug\net8.0\University.Extensions.AssemblyInfoInputs.cache
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\obj\Debug\net8.0\University.Extensions.AssemblyInfo.cs
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\obj\Debug\net8.0\University.Extensions.csproj.CoreCompileInputs.cache
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\obj\Debug\net8.0\University.Extensions.sourcelink.json
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\obj\Debug\net8.0\University.Extensions.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\obj\Debug\net8.0\refint\University.Extensions.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\obj\Debug\net8.0\University.Extensions.pdb
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Extensions\obj\Debug\net8.0\ref\University.Extensions.dll

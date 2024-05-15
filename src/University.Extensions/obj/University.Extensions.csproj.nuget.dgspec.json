@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\University.Extensions.csproj": {}
+    "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\University.Extensions.csproj": {}
   },
   "projects": {
-    "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\University.Extensions.csproj": {
+    "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\University.Extensions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\University.Extensions.csproj",
+        "projectUniqueName": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\University.Extensions.csproj",
         "projectName": "University.Extensions",
-        "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\University.Extensions.csproj",
-        "packagesPath": "C:\\Users\\Andry\\.nuget\\packages\\",
-        "outputPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\obj\\",
+        "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\University.Extensions.csproj",
+        "packagesPath": "C:\\Users\\СТО\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Download_BASE\\Visual Studio_SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\СТО\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

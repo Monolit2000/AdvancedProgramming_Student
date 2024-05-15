@@ -8,13 +8,18 @@ namespace University.Models
 {
     public class ResearchProject
     {
-        public string ProjectId { get; set; } = string.Empty;
+        public long ResearchProjectId { get; set; } = 0;
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public List<string> TeamMembers { get; set; } = [];
-        public string Supervisor { get; set; } = string.Empty;
+        public virtual ICollection<Student>? TeamMembers { get; set; } = null;
+        public string Supervisor { get; set; } = string.Empty; 
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public float Budget { get; set; }
+
+        public ResearchProject()
+        {
+                
+        }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using University.Interfaces;
 using University.Data;
+using System.Net.Http.Headers;
+using University.ViewModels;
 
 namespace University.ViewModels;
 
@@ -65,6 +67,82 @@ public class MainWindowViewModel : ViewModelBase
         }
     }
 
+    private object? _researchProjectSubView = null;
+    public object? ResearchProjectSubView
+    {
+        get
+        {
+            return _researchProjectSubView;
+        }
+        set
+        {
+            _researchProjectSubView = value;
+            OnPropertyChanged(nameof(ResearchProjectSubView));
+        }
+    }
+
+
+    private object? _bookSubView = null;
+    public object? BookSubView
+    {
+        get
+        {
+            return _bookSubView;
+        }
+        set
+        {
+            _bookSubView = value;
+            OnPropertyChanged(nameof(BookSubView));
+        }
+    }
+
+    private object? _librarySubView = null;
+    public object? LibrarySubView
+    {
+        get
+        {
+            return _librarySubView;
+        }
+        set
+        {
+            _librarySubView = value;
+            OnPropertyChanged(nameof(LibrarySubView));
+        }
+    }
+
+
+    private object? _studentOrganizationSubView = null;
+    public object? StudentOrganizationSubView
+    {
+        get
+        {
+            return _studentOrganizationSubView;
+        }
+        set
+        {
+            _studentOrganizationSubView = value;
+            OnPropertyChanged(nameof(StudentOrganizationSubView));
+        }
+    }
+
+
+    private object? _athleticsFacilitySubView = null;
+    public object? AthleticsFacilitySubView
+    {
+        get
+        {
+            return _athleticsFacilitySubView;
+        }
+        set
+        {
+            _athleticsFacilitySubView = value;
+            OnPropertyChanged(nameof(AthleticsFacilitySubView));
+        }
+    }
+
+
+
+
     private static MainWindowViewModel? _instance = null;
     public static MainWindowViewModel? Instance()
     {
@@ -84,5 +162,11 @@ public class MainWindowViewModel : ViewModelBase
         StudentsSubView = new StudentsViewModel(_context, _dialogService);
         SubjectsSubView = new SubjectsViewModel(_context, _dialogService);
         SearchSubView = new SearchViewModel(_context, _dialogService);
+        SearchSubView = new SearchViewModel(_context, _dialogService);
+        ResearchProjectSubView = new ResearchProjectViewModel(_context, _dialogService);
+        BookSubView = new BookViewModel(_context, _dialogService);
+        LibrarySubView = new LibraryViewModel(_context, _dialogService);
+        StudentOrganizationSubView = new StudentOrganizationViewModel(_context, _dialogService);
+        AthleticsFacilitySubView = new AthleticsFacilitysViewModel(_context, _dialogService);
     }
 }

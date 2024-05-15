@@ -1,0 +1,15 @@
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\bin\Debug\net8.0-windows\University.Common.deps.json
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\bin\Debug\net8.0-windows\University.Common.runtimeconfig.json
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\bin\Debug\net8.0-windows\University.Common.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\bin\Debug\net8.0-windows\University.Common.pdb
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\University.Common.csproj.AssemblyReference.cache
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\University.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\University.Common.AssemblyInfoInputs.cache
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\University.Common.AssemblyInfo.cs
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\University.Common.csproj.CoreCompileInputs.cache
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\University.Common.sourcelink.json
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\University.Common.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\refint\University.Common.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\University.Common.pdb
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\University.Common.genruntimeconfig.cache
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Common\obj\Debug\net8.0-windows\ref\University.Common.dll

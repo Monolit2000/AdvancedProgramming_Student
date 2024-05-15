@@ -1506,23 +1506,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Andry\\.nuget\\packages\\": {},
-    "E:\\Download_BASE\\Visual Studio_SDK\\NuGetPackages": {}
+    "C:\\Users\\СТО\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Data\\University.Data.csproj",
+      "projectUniqueName": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Data\\University.Data.csproj",
       "projectName": "University.Data",
-      "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Data\\University.Data.csproj",
-      "packagesPath": "C:\\Users\\Andry\\.nuget\\packages\\",
-      "outputPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Data\\obj\\",
+      "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Data\\University.Data.csproj",
+      "packagesPath": "C:\\Users\\СТО\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Download_BASE\\Visual Studio_SDK\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\СТО\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1538,8 +1538,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Models\\University.Models.csproj": {
-              "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Models\\University.Models.csproj"
+            "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Models\\University.Models.csproj": {
+              "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Models\\University.Models.csproj"
             }
           }
         }

@@ -10,3 +10,15 @@ E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8
 E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\refint\University.Interfaces.dll
 E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.pdb
 E:\C#_WORK\AdvancedProgramming2_STUDENT\src\University.Interfaces\obj\Debug\net8.0\ref\University.Interfaces.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\bin\Debug\net8.0\University.Interfaces.deps.json
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\bin\Debug\net8.0\University.Interfaces.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\bin\Debug\net8.0\University.Interfaces.pdb
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.AssemblyInfoInputs.cache
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.AssemblyInfo.cs
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.sourcelink.json
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\obj\Debug\net8.0\refint\University.Interfaces.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\obj\Debug\net8.0\University.Interfaces.pdb
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Interfaces\obj\Debug\net8.0\ref\University.Interfaces.dll

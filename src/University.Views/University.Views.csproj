@@ -42,5 +42,9 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Librarys\" />
+  </ItemGroup>
+
 
 </Project>

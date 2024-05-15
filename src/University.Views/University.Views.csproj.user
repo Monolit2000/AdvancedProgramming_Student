@@ -2,24 +2,78 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="AddBookView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AddResearchProjectView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddStudentOrganizationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="BookView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditBookView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="EditResearchProjectView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="AddLibraryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditLibraryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditStudentOrganizationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LibraryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ResearchProjectView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StudentOrganizationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AddBookView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AddResearchProjectView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddStudentOrganizationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BookView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditBookView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EditResearchProjectView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="AddLibraryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditLibraryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditStudentOrganizationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LibraryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ResearchProjectView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StudentOrganizationView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

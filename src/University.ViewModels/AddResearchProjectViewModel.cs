@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 using University.Data;
+using University.Interfaces;
 using University.Models;
 
 namespace University.ViewModels
@@ -11,6 +12,7 @@ namespace University.ViewModels
     public class AddResearchProjectViewModel : ViewModelBase, IDataErrorInfo
     {
         private readonly UniversityContext _context;
+        private readonly IDialogService _dialogService;
 
         public string Error => string.Empty;
 
@@ -108,8 +110,34 @@ namespace University.ViewModels
             }
         }
 
-        private ICommand _saveCommand;
-        public ICommand SaveCommand => _saveCommand ??= new RelayCommand<object>(SaveData);
+
+        private ICommand? _back = null;
+        public ICommand? Back
+        {
+            get
+            {
+                if (_back is null)
+                {
+                    _back = new RelayCommand<object>(NavigateBack);
+                }
+                return _back;
+            }
+        }
+
+        private void NavigateBack(object? obj)
+        {
+            var instance = MainWindowViewModel.Instance();
+            if (instance is not null)
+            {
+                instance.ResearchProjectSubView = new ResearchProjectViewModel(_context, _dialogService);
+            }
+        }
+
+
+
+
+        private ICommand? _saveCommand = null;
+        public ICommand Save => _saveCommand ??= new RelayCommand<object>(SaveData);
 
         private void SaveData(object? obj)
         {
@@ -134,9 +162,10 @@ namespace University.ViewModels
             Response = "Data Saved";
         }
 
-        public AddResearchProjectViewModel(UniversityContext context)
+        public AddResearchProjectViewModel(UniversityContext context, IDialogService dialogService)
         {
             _context = context;
+            _dialogService = dialogService;
         }
 
         private bool IsValid()

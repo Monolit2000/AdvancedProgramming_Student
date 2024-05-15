@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Services\\University.Services.csproj": {}
+    "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Services\\University.Services.csproj": {}
   },
   "projects": {
-    "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Controls\\University.Controls.csproj": {
+    "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Controls\\University.Controls.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Controls\\University.Controls.csproj",
+        "projectUniqueName": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Controls\\University.Controls.csproj",
         "projectName": "University.Controls",
-        "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Controls\\University.Controls.csproj",
-        "packagesPath": "C:\\Users\\Andry\\.nuget\\packages\\",
-        "outputPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Controls\\obj\\",
+        "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Controls\\University.Controls.csproj",
+        "packagesPath": "C:\\Users\\СТО\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Controls\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Download_BASE\\Visual Studio_SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\СТО\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.ViewModels\\University.ViewModels.csproj": {
-                "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.ViewModels\\University.ViewModels.csproj"
+              "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.ViewModels\\University.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.ViewModels\\University.ViewModels.csproj"
               }
             }
           }
@@ -99,20 +99,20 @@
         }
       }
     },
-    "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Data\\University.Data.csproj": {
+    "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Data\\University.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Data\\University.Data.csproj",
+        "projectUniqueName": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Data\\University.Data.csproj",
         "projectName": "University.Data",
-        "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Data\\University.Data.csproj",
-        "packagesPath": "C:\\Users\\Andry\\.nuget\\packages\\",
-        "outputPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Data\\obj\\",
+        "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Data\\University.Data.csproj",
+        "packagesPath": "C:\\Users\\СТО\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Download_BASE\\Visual Studio_SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\СТО\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -128,8 +128,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Models\\University.Models.csproj": {
-                "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Models\\University.Models.csproj"
+              "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Models\\University.Models.csproj": {
+                "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Models\\University.Models.csproj"
               }
             }
           }
@@ -187,20 +187,20 @@
         }
       }
     },
-    "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\University.Extensions.csproj": {
+    "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\University.Extensions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\University.Extensions.csproj",
+        "projectUniqueName": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\University.Extensions.csproj",
         "projectName": "University.Extensions",
-        "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\University.Extensions.csproj",
-        "packagesPath": "C:\\Users\\Andry\\.nuget\\packages\\",
-        "outputPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\obj\\",
+        "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\University.Extensions.csproj",
+        "packagesPath": "C:\\Users\\СТО\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Download_BASE\\Visual Studio_SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\СТО\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -247,20 +247,20 @@
         }
       }
     },
-    "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Interfaces\\University.Interfaces.csproj": {
+    "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Interfaces\\University.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Interfaces\\University.Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Interfaces\\University.Interfaces.csproj",
         "projectName": "University.Interfaces",
-        "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Interfaces\\University.Interfaces.csproj",
-        "packagesPath": "C:\\Users\\Andry\\.nuget\\packages\\",
-        "outputPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Interfaces\\obj\\",
+        "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Interfaces\\University.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\СТО\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Download_BASE\\Visual Studio_SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\СТО\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -307,20 +307,20 @@
         }
       }
     },
-    "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Models\\University.Models.csproj": {
+    "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Models\\University.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Models\\University.Models.csproj",
+        "projectUniqueName": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Models\\University.Models.csproj",
         "projectName": "University.Models",
-        "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Models\\University.Models.csproj",
-        "packagesPath": "C:\\Users\\Andry\\.nuget\\packages\\",
-        "outputPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Models\\obj\\",
+        "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Models\\University.Models.csproj",
+        "packagesPath": "C:\\Users\\СТО\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Download_BASE\\Visual Studio_SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\СТО\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -367,20 +367,20 @@
         }
       }
     },
-    "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Services\\University.Services.csproj": {
+    "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Services\\University.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Services\\University.Services.csproj",
+        "projectUniqueName": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Services\\University.Services.csproj",
         "projectName": "University.Services",
-        "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Services\\University.Services.csproj",
-        "packagesPath": "C:\\Users\\Andry\\.nuget\\packages\\",
-        "outputPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Services\\obj\\",
+        "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Services\\University.Services.csproj",
+        "packagesPath": "C:\\Users\\СТО\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Download_BASE\\Visual Studio_SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\СТО\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -396,11 +396,11 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Controls\\University.Controls.csproj": {
-                "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Controls\\University.Controls.csproj"
+              "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Controls\\University.Controls.csproj": {
+                "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Controls\\University.Controls.csproj"
               },
-              "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Interfaces\\University.Interfaces.csproj": {
-                "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Interfaces\\University.Interfaces.csproj"
+              "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Interfaces\\University.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Interfaces\\University.Interfaces.csproj"
               }
             }
           }
@@ -451,20 +451,20 @@
         }
       }
     },
-    "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.ViewModels\\University.ViewModels.csproj": {
+    "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.ViewModels\\University.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.ViewModels\\University.ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.ViewModels\\University.ViewModels.csproj",
         "projectName": "University.ViewModels",
-        "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.ViewModels\\University.ViewModels.csproj",
-        "packagesPath": "C:\\Users\\Andry\\.nuget\\packages\\",
-        "outputPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.ViewModels\\obj\\",
+        "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.ViewModels\\University.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\СТО\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Download_BASE\\Visual Studio_SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\СТО\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -480,14 +480,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Data\\University.Data.csproj": {
-                "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Data\\University.Data.csproj"
+              "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Data\\University.Data.csproj": {
+                "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Data\\University.Data.csproj"
               },
-              "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\University.Extensions.csproj": {
-                "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Extensions\\University.Extensions.csproj"
+              "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\University.Extensions.csproj": {
+                "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Extensions\\University.Extensions.csproj"
               },
-              "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Interfaces\\University.Interfaces.csproj": {
-                "projectPath": "E:\\C#_WORK\\AdvancedProgramming2_STUDENT\\src\\University.Interfaces\\University.Interfaces.csproj"
+              "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Interfaces\\University.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\СТО\\Documents\\Proj\\AdvancedProgramming_Student\\src\\University.Interfaces\\University.Interfaces.csproj"
               }
             }
           }
