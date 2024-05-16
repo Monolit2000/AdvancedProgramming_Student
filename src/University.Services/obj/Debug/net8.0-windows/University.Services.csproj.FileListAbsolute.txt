@@ -45,8 +45,8 @@ C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Servic
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Services\obj\Debug\net8.0-windows\University.Services.AssemblyInfo.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Services\obj\Debug\net8.0-windows\University.Services.csproj.CoreCompileInputs.cache
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Services\obj\Debug\net8.0-windows\University.Services.sourcelink.json
-C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Services\obj\Debug\net8.0-windows\University.Services.csproj.CopyComplete
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Services\obj\Debug\net8.0-windows\University.Services.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Services\obj\Debug\net8.0-windows\refint\University.Services.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Services\obj\Debug\net8.0-windows\University.Services.pdb
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Services\obj\Debug\net8.0-windows\ref\University.Services.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Services\obj\Debug\net8.0-windows\Universi.E29AC53A.Up2Date

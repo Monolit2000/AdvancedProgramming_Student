@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 using University.Data;
@@ -15,6 +17,7 @@ namespace University.ViewModels
 
         public string Error => string.Empty;
 
+        #region prop
         public string this[string columnName]
         {
             get
@@ -139,6 +142,115 @@ namespace University.ViewModels
             }
         }
 
+        #endregion
+
+
+        #region Available Assigned
+
+        private ObservableCollection<Library>? _availableLibraries = null;
+        public ObservableCollection<Library> AvailableLibraries
+        {
+            get
+            {
+                if (_availableLibraries is null)
+                {
+                    _availableLibraries = LoadLibraries();
+                    return _availableLibraries;
+                }
+                return _availableLibraries;
+            }
+            set
+            {
+                _availableLibraries = value;
+                OnPropertyChanged(nameof(AvailableLibraries));
+            }
+        }
+
+
+        private ObservableCollection<Library>? _assignedLibraries = null;
+        public ObservableCollection<Library> AssignedLibraries
+        {
+            get
+            {
+                if (_assignedLibraries is null)
+                {
+                    _assignedLibraries = new ObservableCollection<Library>();
+                    return _assignedLibraries;
+                }
+                return _assignedLibraries;
+            }
+            set
+            {
+                _assignedLibraries = value;
+                OnPropertyChanged(nameof(AssignedLibraries));
+            }
+        }
+
+
+        private ObservableCollection<Library> LoadLibraries()
+        {
+            _context.Database.EnsureCreated();
+            _context.Librarys.Load();
+            return _context.Librarys.Local.ToObservableCollection();
+        }
+
+        #endregion
+
+
+        #region Add Remuve
+
+        private ICommand? _add = null;
+        public ICommand Add
+        {
+            get
+            {
+                if (_add is null)
+                {
+                    _add = new RelayCommand<object>(AddLibrary);
+                }
+                return _add;
+            }
+        }
+
+        private void AddLibrary(object? obj)
+        {
+            if (obj is Library book)
+            {
+                if (AssignedLibraries is not null && !AssignedLibraries.Contains(book))
+                {
+                    AssignedLibraries.Add(book);
+                }
+            }
+        }
+
+        private ICommand? _remove = null;
+        public ICommand? Remove
+        {
+            get
+            {
+                if (_remove is null)
+                {
+                    _remove = new RelayCommand<object>(RemoveLibrary);
+                }
+                return _remove;
+            }
+        }
+
+        private void RemoveLibrary(object? obj)
+        {
+            if (obj is Library book)
+            {
+                if (AvailableLibraries is not null)
+                {
+                    AvailableLibraries.Remove(book);
+                }
+            }
+        }
+
+        #endregion
+
+
+        #region Navigate
 
         private ICommand? _back = null;
         public ICommand? Back
@@ -181,7 +293,9 @@ namespace University.ViewModels
                 PublicationDate = PublicationDate.Value,
                 ISBN = ISBN,
                 Genre = Genre,
-                Description = Description
+                Description = Description,
+                Libraries = AssignedLibraries
+
             };
 
             _context.Books.Add(book);
@@ -189,6 +303,8 @@ namespace University.ViewModels
 
             Response = "Data Saved";
         }
+
+        #endregion
 
         public AddBookViewModel(UniversityContext context, IDialogService dialogService)
         {

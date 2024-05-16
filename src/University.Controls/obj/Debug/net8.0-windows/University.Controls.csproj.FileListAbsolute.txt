@@ -64,9 +64,9 @@ C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Contro
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Controls\obj\Debug\net8.0-windows\University.Controls.AssemblyInfo.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Controls\obj\Debug\net8.0-windows\University.Controls.csproj.CoreCompileInputs.cache
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Controls\obj\Debug\net8.0-windows\University.Controls.sourcelink.json
-C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Controls\obj\Debug\net8.0-windows\University.Controls.csproj.CopyComplete
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Controls\obj\Debug\net8.0-windows\University.Controls.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Controls\obj\Debug\net8.0-windows\refint\University.Controls.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Controls\obj\Debug\net8.0-windows\University.Controls.pdb
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Controls\obj\Debug\net8.0-windows\University.Controls.genruntimeconfig.cache
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Controls\obj\Debug\net8.0-windows\ref\University.Controls.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Controls\obj\Debug\net8.0-windows\Universi.C909C9D9.Up2Date

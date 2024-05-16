@@ -37,8 +37,8 @@ C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.ViewMo
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.ViewModels\obj\Debug\net8.0\University.ViewModels.AssemblyInfo.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.ViewModels\obj\Debug\net8.0\University.ViewModels.csproj.CoreCompileInputs.cache
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.ViewModels\obj\Debug\net8.0\University.ViewModels.sourcelink.json
-C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.ViewModels\obj\Debug\net8.0\University.ViewModels.csproj.CopyComplete
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.ViewModels\obj\Debug\net8.0\University.ViewModels.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.ViewModels\obj\Debug\net8.0\refint\University.ViewModels.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.ViewModels\obj\Debug\net8.0\University.ViewModels.pdb
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.ViewModels\obj\Debug\net8.0\ref\University.ViewModels.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.ViewModels\obj\Debug\net8.0\Universi.3032AE34.Up2Date

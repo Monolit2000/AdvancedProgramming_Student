@@ -97,7 +97,6 @@ C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\University.Views.AssemblyInfo.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\University.Views.csproj.CoreCompileInputs.cache
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\University.Views.sourcelink.json
-C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\University.Views.csproj.CopyComplete
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\University.Views.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\refint\University.Views.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\University.Views.pdb
@@ -126,3 +125,4 @@ C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\AddAthleticsFacilityView.g.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\AthleticsFacilityView.g.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\EditAthleticsFacilityView.g.cs
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\Universi.85A0E484.Up2Date

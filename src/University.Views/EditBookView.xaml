@@ -70,8 +70,8 @@
         </GroupBox>
 
         <!-- Группа с назначенными студентами -->
-        <GroupBox Header="Assigned Students" Grid.Row="1" Grid.Column="1" Margin="0,5,5,5" Padding="10">
-            <ListView x:Name="Assigned" ItemsSource="{Binding AssignedStudents}" BorderThickness="0">
+        <GroupBox Header="Assigned Libraries" Grid.Row="1" Grid.Column="1" Margin="0,5,5,5" Padding="10">
+            <ListView x:Name="Assigned" ItemsSource="{Binding AssignedLibraries}" BorderThickness="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="0,0,0,5">
@@ -81,9 +81,8 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0">
                                 <TextBlock.Text>
-                                    <MultiBinding StringFormat=" {0} {1} ">
+                                    <MultiBinding StringFormat=" {0} ">
                                         <Binding Path="Name"/>
-                                        <Binding Path="LastName"/>
                                     </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>
@@ -99,8 +98,8 @@
         </StackPanel>
 
         <!-- Группа с доступными студентами -->
-        <GroupBox Header="Available Students" Grid.Row="1" Grid.Column="3" Margin="0,5,5,5" Padding="10">
-            <ListView x:Name="Available" ItemsSource="{Binding AvailableStudents}" BorderThickness="0">
+        <GroupBox Header="Available Libraries" Grid.Row="1" Grid.Column="3" Margin="0,5,5,5" Padding="10">
+            <ListView x:Name="Available" ItemsSource="{Binding AvailableLibraries}" BorderThickness="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="0,0,0,5">
@@ -110,9 +109,8 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0">
                                 <TextBlock.Text>
-                                    <MultiBinding StringFormat=" {0} {1} ">
+                                    <MultiBinding StringFormat=" {0} ">
                                         <Binding Path="Name"/>
-                                        <Binding Path="LastName"/>
                                     </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>

@@ -112,7 +112,22 @@ namespace University.ViewModels
 
         private void RemoveLibrary(object? obj)
         {
-            // Implement RemoveLibrary method if needed
+            if (obj is not null)
+            {
+                long libraryId = (long)obj;
+                Library? library = _context.Librarys.Find(libraryId);
+                if (library is not null)
+                {
+                    DialogResult = _dialogService.Show(library.Name + " " + library.Description);
+                    if (DialogResult == false)
+                    {
+                        return;
+                    }
+
+                    _context.Librarys.Remove(library);
+                    _context.SaveChanges();
+                }
+            }
         }
 
         public LibraryViewModel(UniversityContext context, IDialogService dialogService)

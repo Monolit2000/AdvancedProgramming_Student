@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 using University.Data;
@@ -16,6 +17,8 @@ namespace University.ViewModels
         private Library _library = new Library();
 
         public string Error => string.Empty;
+
+        #region props
 
         public string this[string columnName]
         {
@@ -159,6 +162,116 @@ namespace University.ViewModels
             }
         }
 
+        #endregion
+
+
+        #region Available Assigned
+
+        private ObservableCollection<Book>? _availableBooks = null;
+        public ObservableCollection<Book> AvailableBooks
+        {
+            get
+            {
+                if (_availableBooks is null)
+                {
+                    _availableBooks = LoadBooks();
+                    return _availableBooks;
+                }
+                return _availableBooks;
+            }
+            set
+            {
+                _availableBooks = value;
+                OnPropertyChanged(nameof(AvailableBooks));
+            }
+        }
+
+
+        private ObservableCollection<Book>? _assignedBooks = null;
+        public ObservableCollection<Book> AssignedBooks
+        {
+            get
+            {
+                if (_assignedBooks is null)
+                {
+                    _assignedBooks = new ObservableCollection<Book>();
+                    return _assignedBooks;
+                }
+                return _assignedBooks;
+            }
+            set
+            {
+                _assignedBooks = value;
+                OnPropertyChanged(nameof(AssignedBooks));
+            }
+        }
+
+
+        private ObservableCollection<Book> LoadBooks()
+        {
+            _context.Database.EnsureCreated();
+            _context.Books.Load();
+            return _context.Books.Local.ToObservableCollection();
+        }
+
+        #endregion
+
+
+        #region Add Remuve
+
+        private ICommand? _add = null;
+        public ICommand Add
+        {
+            get
+            {
+                if (_add is null)
+                {
+                    _add = new RelayCommand<object>(AddStudent);
+                }
+                return _add;
+            }
+        }
+
+        private void AddStudent(object? obj)
+        {
+            if (obj is Book book)
+            {
+                if (AssignedBooks is not null && !AssignedBooks.Contains(book))
+                {
+                    AssignedBooks.Add(book);
+                }
+            }
+        }
+
+        private ICommand? _remove = null;
+        public ICommand? Remove
+        {
+            get
+            {
+                if (_remove is null)
+                {
+                    _remove = new RelayCommand<object>(RemoveStudent);
+                }
+                return _remove;
+            }
+        }
+
+        private void RemoveStudent(object? obj)
+        {
+            if (obj is Book book)
+            {
+                if (AvailableBooks is not null)
+                {
+                    AvailableBooks.Remove(book);
+                }
+            }
+        }
+
+        #endregion
+
+
+        #region Navigate
+
         private ICommand _back;
         public ICommand Back => _back ??= new RelayCommand<object>(NavigateBack);
 
@@ -195,12 +308,15 @@ namespace University.ViewModels
             library.NumberOfRooms = NumberOfRooms;
             library.Description = Description;
             library.Librarian = Librarian;
+            library.Books = AssignedBooks;
 
             _context.Entry(library).State = EntityState.Modified;
             _context.SaveChanges();
 
             Response = "Data Saved";
         }
+
+        #endregion
 
         public EditLibraryViewModel(UniversityContext context, IDialogService dialogService)
         {
@@ -232,6 +348,11 @@ namespace University.ViewModels
                 this.NumberOfRooms = library.NumberOfRooms;
                 this.Description = library.Description;
                 this.Librarian = library.Librarian;
+                if (library.Books is not null)
+                {
+                    this.AssignedBooks =
+                        new ObservableCollection<Book>(library.Books);
+                }
             }
             else
             {

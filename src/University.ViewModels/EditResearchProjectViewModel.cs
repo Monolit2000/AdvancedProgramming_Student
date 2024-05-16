@@ -198,6 +198,8 @@ namespace University.ViewModels
             }
         }
 
+        #region Add Remuve 
+
         private ICommand? _add = null;
         public ICommand Add
         {
@@ -245,6 +247,8 @@ namespace University.ViewModels
                 }
             }
         }
+
+        #endregion
 
         private ICommand? _save = null;
         public ICommand Save

@@ -28,9 +28,9 @@ C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\o
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\obj\Debug\net8.0\University.Data.AssemblyInfo.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\obj\Debug\net8.0\University.Data.csproj.CoreCompileInputs.cache
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\obj\Debug\net8.0\University.Data.sourcelink.json
-C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\obj\Debug\net8.0\University.Data.csproj.CopyComplete
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\obj\Debug\net8.0\University.Data.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\obj\Debug\net8.0\refint\University.Data.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\obj\Debug\net8.0\University.Data.pdb
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\obj\Debug\net8.0\University.Data.genruntimeconfig.cache
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\obj\Debug\net8.0\ref\University.Data.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Data\obj\Debug\net8.0\Universi.913CBFE3.Up2Date

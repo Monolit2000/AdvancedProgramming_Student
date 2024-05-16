@@ -29,7 +29,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Expander Header="View" Padding="2">
-                                    <ItemsControl ItemsSource="{Binding AssignedBooks}">
+                                    <ItemsControl ItemsSource="{Binding Books}">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
                                                 <Grid Margin="0,0,0,5">

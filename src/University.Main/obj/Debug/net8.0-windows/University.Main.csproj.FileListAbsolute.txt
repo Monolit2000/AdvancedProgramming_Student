@@ -204,9 +204,9 @@ C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\o
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\University.Main.AssemblyInfo.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\University.Main.csproj.CoreCompileInputs.cache
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\University.Main.sourcelink.json
-C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\University.Main.csproj.CopyComplete
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\University.Main.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\refint\University.Main.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\University.Main.pdb
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\University.Main.genruntimeconfig.cache
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\ref\University.Main.dll
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\Universi.AC1C1E80.Up2Date
