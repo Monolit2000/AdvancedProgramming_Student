@@ -44,7 +44,7 @@ namespace University.ViewModels
                 _dialogResult = value;
             }
         }
-
+ 
 
         private ICommand? _add = null;
         public ICommand? Add

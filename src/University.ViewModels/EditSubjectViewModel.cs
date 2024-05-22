@@ -17,6 +17,9 @@ public class EditSubjectViewModel : ViewModelBase, IDataErrorInfo
 
     public string Error => string.Empty;
 
+
+    #region base prop
+
     public string this[string columnName]
     {
         get
@@ -117,6 +120,10 @@ public class EditSubjectViewModel : ViewModelBase, IDataErrorInfo
         }
     }
 
+    #endregion
+
+    #region Available Assigned
+
     private ObservableCollection<Student>? _availableStudents = null;
     public ObservableCollection<Student> AvailableStudents
     {
@@ -155,6 +162,10 @@ public class EditSubjectViewModel : ViewModelBase, IDataErrorInfo
         }
     }
 
+    #endregion
+
+    #region Navigations
+
     private ICommand? _back = null;
     public ICommand Back
     {
@@ -176,6 +187,49 @@ public class EditSubjectViewModel : ViewModelBase, IDataErrorInfo
             instance.SubjectsSubView = new SubjectsViewModel(_context, _dialogService);
         }
     }
+
+
+    private ICommand? _save = null;
+    public ICommand Save
+    {
+        get
+        {
+            if (_save is null)
+            {
+                _save = new RelayCommand<object>(SaveData);
+            }
+            return _save;
+        }
+    }
+
+    private void SaveData(object? obj)
+    {
+        if (!IsValid())
+        {
+            Response = "Please complete all required fields";
+            return;
+        }
+
+        if (_subject is null)
+        {
+            return;
+        }
+
+        _subject.Name = Name;
+        _subject.Semester = Semester;
+        _subject.Lecturer = Lecturer;
+        _subject.Students = AssignedStudents;
+
+        _context.Entry(_subject).State = EntityState.Modified;
+        _context.SaveChanges();
+
+        Response = "Data Saved";
+    }
+
+    #endregion
+
+    
+    #region Add Remuve
 
     private ICommand? _add;
     public ICommand Add
@@ -225,42 +279,10 @@ public class EditSubjectViewModel : ViewModelBase, IDataErrorInfo
         }
     }
 
-    private ICommand? _save = null;
-    public ICommand Save
-    {
-        get
-        {
-            if (_save is null)
-            {
-                _save = new RelayCommand<object>(SaveData);
-            }
-            return _save;
-        }
-    }
+    #endregion
 
-    private void SaveData(object? obj)
-    {
-        if (!IsValid())
-        {
-            Response = "Please complete all required fields";
-            return;
-        }
 
-        if (_subject is null)
-        {
-            return;
-        }
 
-        _subject.Name = Name;
-        _subject.Semester = Semester;
-        _subject.Lecturer = Lecturer;
-        _subject.Students = AssignedStudents;
-
-        _context.Entry(_subject).State = EntityState.Modified;
-        _context.SaveChanges();
-
-        Response = "Data Saved";
-    }
 
     public EditSubjectViewModel(UniversityContext context, IDialogService dialogService)
     {

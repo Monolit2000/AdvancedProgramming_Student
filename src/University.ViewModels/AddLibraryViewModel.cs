@@ -281,7 +281,8 @@ namespace University.ViewModels
                 NumberOfFloors = NumberOfFloors,
                 NumberOfRooms = NumberOfRooms,
                 Description = Description,
-                Librarian = Librarian
+                Librarian = Librarian,
+                Books = AssignedBooks
             };
 
             _context.Librarys.Add(library);

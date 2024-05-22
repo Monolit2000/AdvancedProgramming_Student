@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 245-1355907354
 AddAthleticsFacilityView.xaml;AddBookView.xaml;AddLibraryView.xaml;AddResearchProjectView.xaml;AddStudentOrganizationView.xaml;AddStudentView.xaml;AddSubjectView.xaml;AthleticsFacilityView.xaml;BookView.xaml;DataTemplates.xaml;EditAthleticsFacilityView.xaml;EditBookView.xaml;EditLibraryView.xaml;EditResearchProjectView.xaml;EditStudentOrganizationView.xaml;EditStudentView.xaml;EditSubjectView.xaml;LibraryView.xaml;ResearchProjectView.xaml;SearchView.xaml;SharedResources.xaml;StudentOrganizationView.xaml;StudentsView.xaml;SubjectsView.xaml;
 
-False
+True
 

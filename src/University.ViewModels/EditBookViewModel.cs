@@ -18,6 +18,8 @@ namespace University.ViewModels
 
         public string Error => string.Empty;
 
+        #region props
+
         public string this[string columnName]
         {
             get
@@ -179,9 +181,35 @@ namespace University.ViewModels
         }
 
 
+        #endregion
 
 
         #region Available Assigned
+
+
+        #region Assigned
+        private ObservableCollection<Library>? _assignedLibraries = null;
+        public ObservableCollection<Library> AssignedLibraries
+        {
+            get
+            {
+                if (_assignedLibraries is null)
+                {
+                    _assignedLibraries = new ObservableCollection<Library>();
+                    return _assignedLibraries;
+                }
+                return _assignedLibraries;
+            }
+            set
+            {
+                _assignedLibraries = value;
+                OnPropertyChanged(nameof(AssignedLibraries));
+            }
+        }
+
+        #endregion
+
+        #region Available
 
         private ObservableCollection<Library>? _availableLibraries = null;
         public ObservableCollection<Library> AvailableLibraries
@@ -202,39 +230,16 @@ namespace University.ViewModels
             }
         }
 
+        #endregion
 
-        private ObservableCollection<Library>? _assignedLibraries = null;
-        public ObservableCollection<Library> AssignedLibraries
-        {
-            get
-            {
-                if (_assignedLibraries is null)
-                {
-                    _assignedLibraries = new ObservableCollection<Library>();
-                    return _assignedLibraries;
-                }
-                return _assignedLibraries;
-            }
-            set
-            {
-                _assignedLibraries = value;
-                OnPropertyChanged(nameof(AssignedLibraries));
-            }
-        }
-
-
-        private ObservableCollection<Library> LoadLibraries()
-        {
-            _context.Database.EnsureCreated();
-            _context.Librarys.Load();
-            return _context.Librarys.Local.ToObservableCollection();
-        }
 
         #endregion
 
 
         #region Add Remuve
 
+
+        #region Add
         private ICommand? _add = null;
         public ICommand Add
         {
@@ -250,15 +255,18 @@ namespace University.ViewModels
 
         private void AddLibrary(object? obj)
         {
-            if (obj is Library book)
+            if (obj is Library library)
             {
-                if (AssignedLibraries is not null && !AssignedLibraries.Contains(book))
+                if (AssignedLibraries is not null && !AssignedLibraries.Contains(library))
                 {
-                    AssignedLibraries.Add(book);
+                    AssignedLibraries.Add(library);
                 }
             }
         }
 
+        #endregion
+
+        #region Remuve
         private ICommand? _remove = null;
         public ICommand? Remove
         {
@@ -276,9 +284,9 @@ namespace University.ViewModels
         {
             if (obj is Library book)
             {
-                if (AvailableLibraries is not null)
+                if (AssignedLibraries is not null)
                 {
-                    AvailableLibraries.Remove(book);
+                    AssignedLibraries.Remove(book);
                 }
             }
         }
@@ -286,7 +294,12 @@ namespace University.ViewModels
         #endregion
 
 
+        #endregion
+
+
         #region Navigate
+
+        #region Back
 
         private ICommand? _back = null;
         public ICommand? Back
@@ -301,6 +314,7 @@ namespace University.ViewModels
             }
         }
 
+
         private void NavigateBack(object? obj)
         {
             var instance = MainWindowViewModel.Instance();
@@ -309,6 +323,10 @@ namespace University.ViewModels
                 instance.BookSubView = new BookViewModel(_context, _dialogService);
             }
         }
+
+        #endregion
+
+        #region Save
 
         private ICommand? _saveCommand = null;
         public ICommand Save => _saveCommand ??= new RelayCommand<object>(SaveData);
@@ -321,21 +339,25 @@ namespace University.ViewModels
                 return;
             }
 
-            var book = new Book
+            var book = _context.Books.Find(BookId);
+
+            if (book is null)
             {
-                Title = Title,
-                Author = Author,
-                Publisher = Publisher,
-                PublicationDate = PublicationDate.Value,
-                ISBN = ISBN,
-                Genre = Genre,
-                Description = Description,
-                Libraries = AssignedLibraries
+                Response = "Book not found";
+                return;
+            }
 
 
-            };
+            book.Title = Title;
+            book.Author = Author;
+            book.Publisher = Publisher;
+            book.PublicationDate = PublicationDate.Value;
+            book.ISBN = ISBN;
+            book.Genre = Genre;
+            book.Description = Description;
+            book.Libraries = AssignedLibraries;
 
-            _context.Books.Add(book);
+            _context.Entry(book).State = EntityState.Modified;
             _context.SaveChanges();
 
             Response = "Data Saved";
@@ -344,23 +366,16 @@ namespace University.ViewModels
         #endregion
 
 
+        #endregion
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private ObservableCollection<Library> LoadLibraries()
+        {
+            _context.Database.EnsureCreated();
+            _context.Librarys.Load();
+            return _context.Librarys.Local.ToObservableCollection();
+        }
 
 
 
@@ -440,6 +455,11 @@ namespace University.ViewModels
                 this.ISBN = book.ISBN;
                 this.Genre = book.Genre;
                 this.Description = book.Description;
+               if(book.Libraries is not null)
+               {
+                    this.AssignedLibraries = 
+                        new ObservableCollection<Library>(book.Libraries);
+               }
             }
             else
             {

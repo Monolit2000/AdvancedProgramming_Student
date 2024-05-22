@@ -64,6 +64,38 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+
+         
+
+
+                    <GridViewColumn Header="Students" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Expander Header="View" Padding="2">
+                                    <ItemsControl ItemsSource="{Binding Students}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="0,0,0,5">
+                                                    <TextBlock>
+                                                        <TextBlock.Text>
+                                                            <MultiBinding StringFormat=" {0} {1} ">
+                                                                <Binding Path="Name"/>
+                                                                <Binding Path="LastName"/>
+                                                            </MultiBinding>
+                                                        </TextBlock.Text>
+                                                    </TextBlock>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Expander>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+
+
                     <GridViewColumn Header="Edit">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

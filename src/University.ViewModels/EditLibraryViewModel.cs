@@ -219,6 +219,7 @@ namespace University.ViewModels
 
         #region Add Remuve
 
+        #region Add
         private ICommand? _add = null;
         public ICommand Add
         {
@@ -226,13 +227,13 @@ namespace University.ViewModels
             {
                 if (_add is null)
                 {
-                    _add = new RelayCommand<object>(AddStudent);
+                    _add = new RelayCommand<object>(AddBook);
                 }
                 return _add;
             }
         }
 
-        private void AddStudent(object? obj)
+        private void AddBook(object? obj)
         {
             if (obj is Book book)
             {
@@ -243,6 +244,10 @@ namespace University.ViewModels
             }
         }
 
+        #endregion
+
+        #region Remove 
+
         private ICommand? _remove = null;
         public ICommand? Remove
         {
@@ -250,22 +255,24 @@ namespace University.ViewModels
             {
                 if (_remove is null)
                 {
-                    _remove = new RelayCommand<object>(RemoveStudent);
+                    _remove = new RelayCommand<object>(RemoveBook);
                 }
                 return _remove;
             }
         }
 
-        private void RemoveStudent(object? obj)
+        private void RemoveBook(object? obj)
         {
             if (obj is Book book)
             {
                 if (AvailableBooks is not null)
                 {
-                    AvailableBooks.Remove(book);
+                    AssignedBooks.Remove(book);
                 }
             }
         }
+
+        #endregion
 
         #endregion
 

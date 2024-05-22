@@ -12,6 +12,8 @@ namespace University.Models
         public DateTime? BirthDate { get; set; } = null;
         public virtual ICollection<Subject>? Subjects { get; set; } = null;
 
+        public virtual ICollection<StudentOrganization>? StudentOrganizations { get; set; } = null;
+
         public virtual ICollection<ResearchProject>? ResearchProjects { get; set; } = null;
 
         public Student()

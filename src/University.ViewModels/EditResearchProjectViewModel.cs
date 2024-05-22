@@ -17,6 +17,10 @@ namespace University.ViewModels
 
         public string Error => string.Empty;
 
+
+
+        #region base prop
+
         public string this[string columnName]
         {
             get
@@ -138,6 +142,10 @@ namespace University.ViewModels
             }
         }
 
+        #endregion
+
+        #region Available Assigned
+
         private ObservableCollection<Student>? _availableStudents = null;
         public ObservableCollection<Student> AvailableStudents
         {
@@ -176,27 +184,8 @@ namespace University.ViewModels
             }
         }
 
-        private ICommand? _back = null;
-        public ICommand Back
-        {
-            get
-            {
-                if (_back is null)
-                {
-                    _back = new RelayCommand<object>(NavigateBack);
-                }
-                return _back;
-            }
-        }
+        #endregion
 
-        private void NavigateBack(object? obj)
-        {
-            var instance = MainWindowViewModel.Instance();
-            if (instance is not null)
-            {
-                instance.ResearchProjectSubView = new ResearchProjectViewModel(_context, _dialogService);
-            }
-        }
 
         #region Add Remuve 
 
@@ -250,6 +239,35 @@ namespace University.ViewModels
 
         #endregion
 
+
+        #region Navigations
+
+
+        private ICommand? _back = null;
+        public ICommand Back
+        {
+            get
+            {
+                if (_back is null)
+                {
+                    _back = new RelayCommand<object>(NavigateBack);
+                }
+                return _back;
+            }
+        }
+
+        private void NavigateBack(object? obj)
+        {
+            var instance = MainWindowViewModel.Instance();
+            if (instance is not null)
+            {
+                instance.ResearchProjectSubView = new ResearchProjectViewModel(_context, _dialogService);
+            }
+        }
+
+
+      
+
         private ICommand? _save = null;
         public ICommand Save
         {
@@ -262,7 +280,6 @@ namespace University.ViewModels
                 return _save;
             }
         }
-
         private void SaveData(object? obj)
         {
             if (!IsValid())
@@ -288,6 +305,11 @@ namespace University.ViewModels
 
             Response = "Data Saved";
         }
+
+
+        #endregion
+
+
 
         public EditResearchProjectViewModel(UniversityContext context, IDialogService dialogService)
         {

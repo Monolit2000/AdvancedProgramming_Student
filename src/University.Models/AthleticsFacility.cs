@@ -16,7 +16,6 @@ namespace University.Models
         private List<string> Availability { get; set; }
         private List<string> Equipment { get; set; }
         public int Capacity { get; set; }
-
         public virtual ICollection<Student>? Students { get; set; } = null;
     }
 }

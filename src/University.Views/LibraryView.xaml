@@ -23,8 +23,10 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}" />
-                    <GridViewColumn Header="Capacity" DisplayMemberBinding="{Binding Capacity}" />
+                    <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Address}" />
+                    <GridViewColumn Header="Number of floors" Width="110" DisplayMemberBinding="{Binding NumberOfFloors}" />
+                    <GridViewColumn Header="Number of rooms" Width="110" DisplayMemberBinding="{Binding NumberOfRooms}" />
+                    <!--<GridViewColumn Header="Capacity" DisplayMemberBinding="{Binding Capacity}" />-->
                     <GridViewColumn Header="Assigned Books" Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

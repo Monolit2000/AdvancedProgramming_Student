@@ -16,6 +16,8 @@ namespace University.ViewModels
 
         public string Error => string.Empty;
 
+        #region props
+
         public string this[string columnName]
         {
             get
@@ -110,6 +112,9 @@ namespace University.ViewModels
             }
         }
 
+        #endregion
+
+        #region Navigations 
 
         private ICommand? _back = null;
         public ICommand? Back
@@ -158,6 +163,11 @@ namespace University.ViewModels
 
             Response = "Data Saved";
         }
+
+        #endregion
+
+
+
 
         public AddAthleticsFacilityViewModel(UniversityContext context, IDialogService dialogService)
         {

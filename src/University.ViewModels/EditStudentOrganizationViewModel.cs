@@ -17,6 +17,7 @@ namespace University.ViewModels
 
         public string Error => string.Empty;
 
+        #region props
         public string this[string columnName]
         {
             get
@@ -142,6 +143,9 @@ namespace University.ViewModels
             }
         }
 
+        #endregion
+
+        #region  Available Assigned
         private ObservableCollection<Student>? _availableStudents = null;
         public ObservableCollection<Student> AvailableStudents
         {
@@ -180,27 +184,10 @@ namespace University.ViewModels
             }
         }
 
-        private ICommand? _back = null;
-        public ICommand Back
-        {
-            get
-            {
-                if (_back is null)
-                {
-                    _back = new RelayCommand<object>(NavigateBack);
-                }
-                return _back;
-            }
-        }
+        #endregion
 
-        private void NavigateBack(object? obj)
-        {
-            var instance = MainWindowViewModel.Instance();
-            if (instance is not null)
-            {
-                instance.StudentOrganizationSubView = new StudentOrganizationViewModel(_context, _dialogService);
-            }
-        }
+        #region Add Remuve
+
 
         private ICommand? _add = null;
         public ICommand Add
@@ -226,6 +213,7 @@ namespace University.ViewModels
             }
         }
 
+
         private ICommand? _remove = null;
         public ICommand? Remove
         {
@@ -250,18 +238,35 @@ namespace University.ViewModels
             }
         }
 
-        private ICommand? _save = null;
-        public ICommand Save
+        #endregion
+
+        #region Navigations 
+        private ICommand? _back = null;
+        public ICommand Back
         {
             get
             {
-                if (_save is null)
+                if (_back is null)
                 {
-                    _save = new RelayCommand<object>(SaveData);
+                    _back = new RelayCommand<object>(NavigateBack);
                 }
-                return _save;
+                return _back;
             }
         }
+
+        private void NavigateBack(object? obj)
+        {
+            var instance = MainWindowViewModel.Instance();
+            if (instance is not null)
+            {
+                instance.StudentOrganizationSubView = new StudentOrganizationViewModel(_context, _dialogService);
+            }
+        }
+
+
+        private ICommand? _save = null;
+        public ICommand Save => _save ??= new RelayCommand<object>(SaveData);
+ 
 
         private void SaveData(object? obj)
         {
@@ -271,24 +276,29 @@ namespace University.ViewModels
                 return;
             }
 
-            if (_studentOrganization is null)
+            var studentOrganization = _context.StudentOrganizations.Find(StudentOrganizationId);
+            if (studentOrganization is null)
             {
+                Response = "Student organization not found";
                 return;
             }
 
-            _studentOrganization.Name = Name;
-            _studentOrganization.Advisor = Advisor;
-            _studentOrganization.President = President;
-            _studentOrganization.Description = Description;
-            _studentOrganization.MeetingSchedule = MeetingSchedule;
-            _studentOrganization.Email = Email;
-            _studentOrganization.Students = AssignedStudents;
+            studentOrganization.Name = Name;
+            studentOrganization.Advisor = Advisor;
+            studentOrganization.President = President;
+            studentOrganization.Description = Description;
+            studentOrganization.MeetingSchedule = MeetingSchedule;
+            studentOrganization.Email = Email;
+            studentOrganization.Students = AssignedStudents;
 
-            _context.Entry(_studentOrganization).State = EntityState.Modified;
+            _context.Entry(studentOrganization).State = EntityState.Modified;
             _context.SaveChanges();
 
             Response = "Data Saved";
         }
+
+        #endregion
+
 
         public EditStudentOrganizationViewModel(UniversityContext context, IDialogService dialogService)
         {
@@ -318,25 +328,22 @@ namespace University.ViewModels
 
         private void LoadStudentOrganizationData()
         {
-            var studentOrganizations = _context.StudentOrganizations;
-            if (studentOrganizations is not null)
+            var studentOrganization = _context.StudentOrganizations.Find(StudentOrganizationId);
+            if (studentOrganization is null)
             {
-                _studentOrganization = studentOrganizations.Find(StudentOrganizationId);
-                if (_studentOrganization is null)
-                {
-                    return;
-                }
-                this.Name = _studentOrganization.Name;
-                this.Advisor = _studentOrganization.Advisor;
-                this.President = _studentOrganization.President;
-                this.Description = _studentOrganization.Description;
-                this.MeetingSchedule = _studentOrganization.MeetingSchedule;
-                this.Email = _studentOrganization.Email;
-                if (_studentOrganization.Students is not null)
-                {
-                    this.AssignedStudents =
-                        new ObservableCollection<Student>(_studentOrganization.Students);
-                }
+                Response = "StudentOrganization not found";
+                return;
+            }
+            this.Name = studentOrganization.Name;
+            this.Advisor = studentOrganization.Advisor;
+            this.President = studentOrganization.President;
+            this.Description = studentOrganization.Description;
+            this.MeetingSchedule = studentOrganization.MeetingSchedule;
+            this.Email = studentOrganization.Email;
+            if (studentOrganization.Students is not null)
+            {
+                this.AssignedStudents =
+                    new ObservableCollection<Student>(studentOrganization.Students);
             }
         }
     }
