@@ -70,6 +70,21 @@ namespace University.ViewModels
             }
         }
 
+        /// <summary>
+        /// ///////////
+        /// </summary>
+        private string _supervisor = string.Empty;
+        public string Supervisor
+        {
+            get => _supervisor;
+            set
+            {
+                _supervisor = value;
+                OnPropertyChanged(nameof(Supervisor));
+            }
+        }
+
+
         private DateTime? _startDate = null;
         public DateTime? StartDate
         {
@@ -158,7 +173,8 @@ namespace University.ViewModels
                 StartDate = StartDate.Value,
                 EndDate = EndDate.Value,
                 Budget = Budget,
-                TeamMembers = AssignedStudents
+                TeamMembers = AssignedStudents,
+                Supervisor = Supervisor,    
             };
 
             _context.ResearchProjects.Add(project);
