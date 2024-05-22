@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("University.Interfaces")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f1628074e153ab2b032382128b3c0460e8be665")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21d9f619de3f81361b7018e01bed7f63bf90e732")]
 [assembly: System.Reflection.AssemblyProductAttribute("University.Interfaces")]
 [assembly: System.Reflection.AssemblyTitleAttribute("University.Interfaces")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

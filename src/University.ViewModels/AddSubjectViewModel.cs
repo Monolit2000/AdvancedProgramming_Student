@@ -266,7 +266,7 @@ public class AddSubjectViewModel : ViewModelBase, IDataErrorInfo
 
     #endregion
 
-
+    #region Basic
     public AddSubjectViewModel(UniversityContext context, IDialogService dialogService)
     {
         _context = context;
@@ -292,4 +292,6 @@ public class AddSubjectViewModel : ViewModelBase, IDataErrorInfo
         }
         return true;
     }
+
+    #endregion
 }
