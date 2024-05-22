@@ -133,9 +133,6 @@ namespace University.ViewModels
             }
         }
 
-
-
-
         private ICommand? _saveCommand = null;
         public ICommand Save => _saveCommand ??= new RelayCommand<object>(SaveData);
 

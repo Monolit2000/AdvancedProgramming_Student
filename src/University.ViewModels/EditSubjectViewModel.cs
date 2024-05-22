@@ -228,7 +228,6 @@ public class EditSubjectViewModel : ViewModelBase, IDataErrorInfo
 
     #endregion
 
-    
     #region Add Remuve
 
     private ICommand? _add;
@@ -280,8 +279,6 @@ public class EditSubjectViewModel : ViewModelBase, IDataErrorInfo
     }
 
     #endregion
-
-
 
 
     public EditSubjectViewModel(UniversityContext context, IDialogService dialogService)

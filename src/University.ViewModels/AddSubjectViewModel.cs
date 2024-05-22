@@ -19,6 +19,8 @@ public class AddSubjectViewModel : ViewModelBase, IDataErrorInfo
         get { return string.Empty; }
     }
 
+    #region props
+
     public string this[string columnName]
     {
         get
@@ -103,66 +105,11 @@ public class AddSubjectViewModel : ViewModelBase, IDataErrorInfo
             OnPropertyChanged(nameof(Response));
         }
     }
+    #endregion
 
-    private ObservableCollection<Student>? _availableStudents = null;
-    public ObservableCollection<Student> AvailableStudents
-    {
-        get
-        {
-            if (_availableStudents is null)
-            {
-                _availableStudents = LoadStudents();
-                return _availableStudents;
-            }
-            return _availableStudents;
-        }
-        set
-        {
-            _availableStudents = value;
-            OnPropertyChanged(nameof(AvailableStudents));
-        }
-    }
 
-    private ObservableCollection<Student>? _assignedStudents = null;
-    public ObservableCollection<Student> AssignedStudents
-    {
-        get
-        {
-            if (_assignedStudents is null)
-            {
-                _assignedStudents = new ObservableCollection<Student>();
-                return _assignedStudents;
-            }
-            return _assignedStudents;
-        }
-        set
-        {
-            _assignedStudents = value;
-            OnPropertyChanged(nameof(AssignedStudents));
-        }
-    }
-
-    private ICommand? _back = null;
-    public ICommand Back
-    {
-        get
-        {
-            if (_back is null)
-            {
-                _back = new RelayCommand<object>(NavigateBack);
-            }
-            return _back;
-        }
-    }
-
-    private void NavigateBack(object? obj)
-    {
-        var instance = MainWindowViewModel.Instance();
-        if (instance is not null)
-        {
-            instance.SubjectsSubView = new SubjectsViewModel(_context, _dialogService);
-        }
-    }
+    #region Add Remuve
+  
 
     private ICommand? _add = null;
     public ICommand Add
@@ -202,7 +149,6 @@ public class AddSubjectViewModel : ViewModelBase, IDataErrorInfo
             return _remove;
         }
     }
-
     private void RemoveStudent(object? obj)
     {
         if (obj is Student student)
@@ -210,6 +156,78 @@ public class AddSubjectViewModel : ViewModelBase, IDataErrorInfo
             AssignedStudents.Remove(student);
         }
     }
+
+    #endregion
+
+
+    #region Available Assigned
+    private ObservableCollection<Student>? _availableStudents = null;
+    public ObservableCollection<Student> AvailableStudents
+    {
+        get
+        {
+            if (_availableStudents is null)
+            {
+                _availableStudents = LoadStudents();
+                return _availableStudents;
+            }
+            return _availableStudents;
+        }
+        set
+        {
+            _availableStudents = value;
+            OnPropertyChanged(nameof(AvailableStudents));
+        }
+    }
+
+    private ObservableCollection<Student>? _assignedStudents = null;
+    public ObservableCollection<Student> AssignedStudents
+    {
+        get
+        {
+            if (_assignedStudents is null)
+            {
+                _assignedStudents = new ObservableCollection<Student>();
+                return _assignedStudents;
+            }
+            return _assignedStudents;
+        }
+        set
+        {
+            _assignedStudents = value;
+            OnPropertyChanged(nameof(AssignedStudents));
+        }
+    }
+
+    #endregion
+
+
+    #region Navigation
+
+    private ICommand? _back = null;
+    public ICommand Back
+    {
+        get
+        {
+            if (_back is null)
+            {
+                _back = new RelayCommand<object>(NavigateBack);
+            }
+            return _back;
+        }
+    }
+
+    private void NavigateBack(object? obj)
+    {
+        var instance = MainWindowViewModel.Instance();
+        if (instance is not null)
+        {
+            instance.SubjectsSubView = new SubjectsViewModel(_context, _dialogService);
+        }
+    }
+
+
+  
 
     private ICommand? _save = null;
     public ICommand Save
@@ -245,6 +263,9 @@ public class AddSubjectViewModel : ViewModelBase, IDataErrorInfo
 
         Response = "Data Saved";
     }
+
+    #endregion
+
 
     public AddSubjectViewModel(UniversityContext context, IDialogService dialogService)
     {

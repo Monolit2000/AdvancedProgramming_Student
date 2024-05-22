@@ -16,6 +16,8 @@ namespace University.Models
 
         public virtual ICollection<ResearchProject>? ResearchProjects { get; set; } = null;
 
+        public virtual ICollection<AthleticsFacility>? AthleticsFacilitys { get; set; } = null; 
+
         public Student()
         {
                     

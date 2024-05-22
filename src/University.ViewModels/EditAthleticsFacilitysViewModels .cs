@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.InteropServices.JavaScript;
 using System.Windows.Input;
 using University.Data;
 using University.Interfaces;
@@ -127,6 +128,7 @@ namespace University.ViewModels
 
         #endregion
 
+
         #region Navigations 
         private ICommand? _back = null;
         public ICommand Back
@@ -181,6 +183,7 @@ namespace University.ViewModels
             _athleticsFacility.Type = Type;
             _athleticsFacility.Description = Description;
             _athleticsFacility.Capacity = Capacity;
+            _athleticsFacility.Students = AssignedStudents;
 
             _context.Entry(_athleticsFacility).State = EntityState.Modified;
             _context.SaveChanges();
@@ -189,6 +192,103 @@ namespace University.ViewModels
         }
 
         #endregion
+
+
+        #region Add Remuve
+
+
+        private ICommand? _add = null;
+        public ICommand Add
+        {
+            get
+            {
+                if (_add is null)
+                {
+                    _add = new RelayCommand<object>(AddStudent);
+                }
+                return _add;
+            }
+        }
+
+        private void AddStudent(object? obj)
+        {
+            if (obj is Student student)
+            {
+
+                if (AssignedStudents.Contains(student))
+                {
+                    return;
+                }
+                AssignedStudents.Add(student);
+            }
+        }
+
+        private ICommand? _remove = null;
+        public ICommand Remove
+        {
+            get
+            {
+                if (_remove is null)
+                {
+                    _remove = new RelayCommand<object>(RemoveStudent);
+                }
+                return _remove;
+            }
+        }
+        private void RemoveStudent(object? obj)
+        {
+            if (obj is Student student)
+            {
+                AssignedStudents.Remove(student);
+            }
+        }
+
+        #endregion
+
+
+        #region Available Assigned
+        private ObservableCollection<Student>? _availableStudents = null;
+        public ObservableCollection<Student> AvailableStudents
+        {
+            get
+            {
+                if (_availableStudents is null)
+                {
+                    _availableStudents = LoadStudents();
+                    return _availableStudents;
+                }
+                return _availableStudents;
+            }
+            set
+            {
+                _availableStudents = value;
+                OnPropertyChanged(nameof(AvailableStudents));
+            }
+        }
+
+        private ObservableCollection<Student>? _assignedStudents = null;
+        public ObservableCollection<Student> AssignedStudents
+        {
+            get
+            {
+                if (_assignedStudents is null)
+                {
+                    _assignedStudents = new ObservableCollection<Student>();
+                    return _assignedStudents;
+                }
+                return _assignedStudents;
+            }
+            set
+            {
+                _assignedStudents = value;
+                OnPropertyChanged(nameof(AssignedStudents));
+            }
+        }
+
+        #endregion
+
+
+        #region Basic
 
         public EditAthleticsFacilityViewModel(UniversityContext context, IDialogService dialogService)
         {
@@ -209,6 +309,13 @@ namespace University.ViewModels
             return true;
         }
 
+        private ObservableCollection<Student> LoadStudents()
+        {
+            _context.Database.EnsureCreated();
+            _context.Students.Load();
+            return _context.Students.Local.ToObservableCollection();
+        }
+
         private void LoadAthleticsFacilityData()
         {
             var athleticsFacilities = _context.AthleticsFacilities;
@@ -224,7 +331,13 @@ namespace University.ViewModels
                 this.Type = _athleticsFacility.Type;
                 this.Description = _athleticsFacility.Description;
                 this.Capacity = _athleticsFacility.Capacity;
+                if (_athleticsFacility.Students is not null)
+                {
+                    this.AssignedStudents =
+                    new ObservableCollection<Student>(_athleticsFacility.Students);
+                }
             }
         }
+        #endregion
     }
 }

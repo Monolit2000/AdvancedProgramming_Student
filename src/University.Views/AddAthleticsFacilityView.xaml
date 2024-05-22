@@ -49,8 +49,8 @@
                 </WrapPanel>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="Assigned Activities" Grid.Row="1" Grid.Column="1" Margin="0,5,5,5" Padding="10">
-            <ListView x:Name="Assigned" ItemsSource="{Binding AssignedActivities}" BorderThickness="0">
+        <GroupBox Header="Assigned Students" Grid.Row="1" Grid.Column="1" Margin="0,5,5,5" Padding="10">
+            <ListView x:Name="Assigned" ItemsSource="{Binding AssignedStudents}" BorderThickness="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="0,0,0,5">
@@ -61,8 +61,8 @@
                             <TextBlock Grid.Column="0">
                                 <TextBlock.Text>
                                     <MultiBinding StringFormat=" {0} {1} ">
-                                        <Binding Path="ActivityName"/>
-                                        <Binding Path="ActivityType"/>
+                                        <Binding Path="Name"/>
+                                        <Binding Path="LastName"/>
                                     </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>
@@ -75,8 +75,8 @@
             <Button Margin="0,0,0,2" Command="{Binding Add}" CommandParameter="{Binding ElementName=Available, Path=SelectedItem}" Style="{StaticResource SecondaryButton}" Width="22" Height="22" Tag="&#xE710;" />
             <Button Margin="0,2,0,0" Command="{Binding Remove}" CommandParameter="{Binding ElementName=Assigned, Path=SelectedItem}" Style="{StaticResource SecondaryButton}" Width="22" Height="22" Tag="&#xE74D;" />
         </StackPanel>
-        <GroupBox Header="Available Activities" Grid.Row="1" Grid.Column="3" Margin="0,5,5,5" Padding="10">
-            <ListView x:Name="Available" ItemsSource="{Binding AvailableActivities}" BorderThickness="0">
+        <GroupBox Header="Available Students" Grid.Row="1" Grid.Column="3" Margin="0,5,5,5" Padding="10">
+            <ListView x:Name="Available" ItemsSource="{Binding AvailableStudents}" BorderThickness="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="0,0,0,5">
@@ -87,8 +87,8 @@
                             <TextBlock Grid.Column="0">
                                 <TextBlock.Text>
                                     <MultiBinding StringFormat=" {0} {1} ">
-                                        <Binding Path="ActivityName"/>
-                                        <Binding Path="ActivityType"/>
+                                        <Binding Path="Name"/>
+                                        <Binding Path="LastName"/>
                                     </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>
