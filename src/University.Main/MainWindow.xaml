@@ -46,6 +46,12 @@
             </TabItem>
 
 
+            <TabItem Header="Exams" Tag="&#xE779;">
+                <ContentControl Content="{Binding ExamSubView}" />
+            </TabItem>
+
+
+
         </TabControl>
     </Grid>
 </Window>

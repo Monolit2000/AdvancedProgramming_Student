@@ -140,8 +140,19 @@ public class MainWindowViewModel : ViewModelBase
         }
     }
 
-
-
+    private object? _examSubView = null;
+    public object? ExamSubView
+    {
+        get
+        {
+            return _examSubView;
+        }
+        set
+        {
+            _examSubView = value;
+            OnPropertyChanged(nameof(ExamSubView));
+        }
+    }
 
     private static MainWindowViewModel? _instance = null;
     public static MainWindowViewModel? Instance()
@@ -168,5 +179,6 @@ public class MainWindowViewModel : ViewModelBase
         LibrarySubView = new LibraryViewModel(_context, _dialogService);
         StudentOrganizationSubView = new StudentOrganizationViewModel(_context, _dialogService);
         AthleticsFacilitySubView = new AthleticsFacilitysViewModel(_context, _dialogService);
+        ExamSubView = new ExamViewModel(_context, _dialogService); 
     }
 }

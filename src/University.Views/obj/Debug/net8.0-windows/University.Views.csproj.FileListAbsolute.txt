@@ -126,3 +126,9 @@ C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\AthleticsFacilityView.g.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\EditAthleticsFacilityView.g.cs
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\Universi.85A0E484.Up2Date
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\AddExamView.baml
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\EditExamView.baml
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\AddExamView.g.cs
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\EditExamView.g.cs
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\ExamView.baml
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Views\obj\Debug\net8.0-windows\ExamView.g.cs

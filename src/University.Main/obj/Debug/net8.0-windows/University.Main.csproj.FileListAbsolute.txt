@@ -210,3 +210,5 @@ C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\o
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\University.Main.genruntimeconfig.cache
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\ref\University.Main.dll
 C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\Universi.AC1C1E80.Up2Date
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\SubjectsView.baml
+C:\Users\СТО\Documents\Proj\AdvancedProgramming_Student\src\University.Main\obj\Debug\net8.0-windows\SubjectsView.g.cs

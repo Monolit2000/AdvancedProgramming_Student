@@ -21,6 +21,8 @@ namespace University.Data
         public DbSet<StudentOrganization> StudentOrganizations { get; set; }
         public DbSet<AthleticsFacility> AthleticsFacilities { get; set; }
 
+        public DbSet<Exam> Exams { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -229,6 +231,47 @@ namespace University.Data
                     Capacity = 200
                 }
             );
+
+
+            #endregion
+
+            #region Exam
+
+            modelBuilder.Entity<Exam>().HasData(
+            new Exam
+            {
+                ExamId = 1,
+                CourseCode = "MATH101",
+                Date = new DateTime(2024, 6, 10),
+                StartTime = new TimeSpan(9, 0, 0),
+                EndTime = new TimeSpan(12, 0, 0),
+                Location = "Room 101",
+                Description = "Final Exam for Mathematics 101",
+                Professor = "Dr. Johnson"
+            },
+            new Exam
+            {
+                ExamId = 2,
+                CourseCode = "BIO202",
+                Date = new DateTime(2024, 6, 12),
+                StartTime = new TimeSpan(10, 0, 0),
+                EndTime = new TimeSpan(13, 0, 0),
+                Location = "Room 201",
+                Description = "Midterm Exam for Biology 202",
+                Professor = "Dr. Smith"
+            },
+            new Exam
+            {
+                ExamId = 3,
+                CourseCode = "CHEM303",
+                Date = new DateTime(2024, 6, 15),
+                StartTime = new TimeSpan(11, 0, 0),
+                EndTime = new TimeSpan(14, 0, 0),
+                Location = "Room 301",
+                Description = "Final Exam for Chemistry 303",
+                Professor = "Dr. Brown"
+            }
+);
 
 
             #endregion

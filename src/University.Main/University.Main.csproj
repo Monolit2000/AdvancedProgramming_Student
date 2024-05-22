@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="..\University.Views\SubjectsView.xaml.cs" Link="SubjectsView.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.0-preview.3.23174.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0-preview.3.23174.2" />
@@ -22,6 +26,12 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0-preview.3.23174.8" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0-preview.3.23174.8" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="..\University.Views\SubjectsView.xaml" Link="SubjectsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
