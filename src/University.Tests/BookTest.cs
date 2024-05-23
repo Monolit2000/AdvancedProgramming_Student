@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using University.Data;
 using University.Interfaces;
@@ -51,6 +52,8 @@ namespace University.Tests
                 context.SaveChanges();
             }
         }
+
+        #region Add
 
         [TestMethod]
         public void Show_all_books()
@@ -152,5 +155,234 @@ namespace University.Tests
                 Assert.IsFalse(newLibraryExists);
             }
         }
+
+        #endregion
+
+        #region Edit
+
+        // Тест для успешного редактирования книги
+        [TestMethod]
+        public void Edit_book_success()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                EditBookViewModel editBookViewModel = new EditBookViewModel(context, _dialogService)
+                {
+                    BookId = 1,
+                    Title = "Updated Book One",
+                    Author = "Updated Author A",
+                    Publisher = "Updated Publisher A",
+                    PublicationDate = new DateTime(2001, 01, 01),
+                    ISBN = "1234567890123",
+                    Genre = "Updated Genre A",
+                    Description = "Updated Description A"
+                };
+
+                editBookViewModel.Save.Execute(null);
+
+                var updatedBook = context.Books.FirstOrDefault(b => b.BookId == 1);
+
+                Assert.IsNotNull(updatedBook);
+                Assert.AreEqual("Updated Book One", updatedBook.Title);
+                Assert.AreEqual("Updated Author A", updatedBook.Author);
+                Assert.AreEqual("Updated Publisher A", updatedBook.Publisher);
+                Assert.AreEqual(new DateTime(2001, 01, 01), updatedBook.PublicationDate);
+                Assert.AreEqual("Updated Genre A", updatedBook.Genre);
+                Assert.AreEqual("Updated Description A", updatedBook.Description);
+            }
+        }
+
+        // Тест для редактирования книги с отсутствующими обязательными полями
+        [TestMethod]
+        public void Edit_book_missing_required_fields()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                EditBookViewModel editBookViewModel = new EditBookViewModel(context, _dialogService)
+                {
+                    BookId = 1,
+                    Title = string.Empty,
+                    Author = string.Empty,
+                    Publisher = string.Empty,
+                    PublicationDate = null,
+                    ISBN = string.Empty,
+                    Genre = string.Empty,
+                    Description = string.Empty
+                };
+
+                editBookViewModel.Save.Execute(null);
+
+                var book = context.Books.FirstOrDefault(b => b.BookId == 1);
+
+                Assert.IsNotNull(book);
+                Assert.AreEqual("Book One", book.Title);  // Title should not change
+                Assert.AreEqual("Author A", book.Author); // Author should not change
+            }
+        }
+
+        // Тест для редактирования несуществующей книги
+        [TestMethod]
+        public void Edit_nonexistent_book()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                EditBookViewModel editBookViewModel = new EditBookViewModel(context, _dialogService)
+                {
+                    BookId = 999,
+                    Title = "Nonexistent Book",
+                    Author = "Nonexistent Author",
+                    Publisher = "Nonexistent Publisher",
+                    PublicationDate = new DateTime(2020, 01, 01),
+                    ISBN = "9999999999999",
+                    Genre = "Nonexistent Genre",
+                    Description = "Nonexistent Description"
+                };
+
+                editBookViewModel.Save.Execute(null);
+
+                var book = context.Books.FirstOrDefault(b => b.BookId == 999);
+
+                Assert.IsNull(book);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_book_without_libraries()
+        {
+            using var context = new UniversityContext(_options);
+            {
+                var viewModel = new EditBookViewModel(context, _dialogService)
+                {
+                    BookId = 2,
+                    Title = "Updated Book Two",
+                    Author = "Updated Author B",
+                    Publisher = "Updated Publisher B",
+                    PublicationDate = new DateTime(2006, 06, 06),
+                    ISBN = "1234567890126",
+                    Genre = "Updated Genre B",
+                    Description = "Updated Description B"
+                };
+
+                viewModel.Save.Execute(null);
+
+                var updatedBook = context.Books.Include(b => b.Libraries).First(b => b.BookId == 2);
+
+                Assert.AreEqual("Updated Book Two", updatedBook.Title);
+                Assert.AreEqual("Updated Author B", updatedBook.Author);
+                Assert.AreEqual("Updated Publisher B", updatedBook.Publisher);
+                Assert.AreEqual(new DateTime(2006, 06, 06), updatedBook.PublicationDate);
+                Assert.AreEqual("Updated Genre B", updatedBook.Genre);
+                Assert.AreEqual("Updated Description B", updatedBook.Description);
+                Assert.IsTrue(updatedBook.Libraries.Any());
+            }
+        }
+
+
+
+
+
+        [TestMethod]
+        public void Edit_books_add_libraries()
+        {
+            using var context = new UniversityContext(_options);
+            {
+                var viewModel = new EditBookViewModel(context, _dialogService)
+                {
+                    BookId = 1,
+                    Title = "Updated Book One",
+                    Author = "Updated Author A",
+                    Publisher = "Updated Publisher A",
+                    PublicationDate = new DateTime(2001, 01, 01),
+                    ISBN = "1234567890126",
+                    Genre = "Updated Genre A",
+                    Description = "Updated Description A"
+                };
+
+                var library = context.Librarys.First(l => l.LibraryId == 2);
+                viewModel.AssignedLibraries = new ObservableCollection<Library> { library };
+
+                viewModel.Save.Execute(null);
+
+                var updatedBook = context.Books.Include(b => b.Libraries).First(b => b.BookId == 1);
+
+                Assert.AreEqual("Updated Book One", updatedBook.Title);
+                Assert.AreEqual("Updated Author A", updatedBook.Author);
+                Assert.AreEqual("Updated Publisher A", updatedBook.Publisher);
+                Assert.AreEqual(new DateTime(2001, 01, 01), updatedBook.PublicationDate);
+                Assert.AreEqual("Updated Genre A", updatedBook.Genre);
+                Assert.AreEqual("Updated Description A", updatedBook.Description);
+                Assert.IsTrue(updatedBook.Libraries.Any(l => l.LibraryId == 2));
+            }
+        }
+
+
+
+        [TestMethod]
+        public void Edit_book_remove_libraries()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                var libraries = context.Librarys.Take(2).ToList();
+                var book = context.Books.Include(b => b.Libraries).FirstOrDefault(b => b.BookId == 1);
+                book.Libraries = libraries;
+                context.SaveChanges();
+
+                EditBookViewModel editBookViewModel = new EditBookViewModel(context, _dialogService)
+                {
+                    BookId = 1,
+                    Title = "Updated Book One",
+                    Author = "Updated Author A",
+                    Publisher = "Updated Publisher A",
+                    PublicationDate = new DateTime(2000, 01, 01),
+                    ISBN = "1234567890123",
+                    Genre = "Updated Genre A",
+                    Description = "Updated Description A",
+                    AssignedLibraries = new ObservableCollection<Library>()
+                };
+                editBookViewModel.Save.Execute(null);
+
+                var updatedBook = context.Books.Include(b => b.Libraries).FirstOrDefault(b => b.BookId == 1);
+                Assert.IsNotNull(updatedBook);
+                Assert.AreEqual(0, updatedBook.Libraries.Count);
+            }
+        }
+
+
+
+
+        [TestMethod]
+        public void Edit_books_with_library()
+        {
+            using var context = new UniversityContext(_options);
+            {
+                EditBookViewModel viewModel = new EditBookViewModel(context, _dialogService)
+                {
+                    BookId = 1,
+                    Title = "Updated Book One",
+                    Author = "Updated Author A",
+                    Publisher = "Updated Publisher A",
+                    PublicationDate = new DateTime(2001, 01, 01),
+                    ISBN = "1234567890126",
+                    Genre = "Updated Genre A",
+                    Description = "Updated Description A",
+                };
+
+                var library = context.Librarys.First(l => l.LibraryId == 2);
+                viewModel.AssignedLibraries = new ObservableCollection<Library> { library };
+
+                viewModel.Save.Execute(null);
+
+                var updatedBook = context.Books.Include(b => b.Libraries).FirstOrDefault(b => b.BookId == 1);
+                Assert.AreEqual("Updated Book One", updatedBook.Title);
+                Assert.AreEqual("Updated Author A", updatedBook.Author);
+                Assert.AreEqual("Updated Publisher A", updatedBook.Publisher);
+                Assert.AreEqual(new DateTime(2001, 01, 01), updatedBook.PublicationDate);
+                Assert.AreEqual("Updated Genre A", updatedBook.Genre);
+                Assert.AreEqual("Updated Description A", updatedBook.Description);
+                Assert.IsTrue(updatedBook.Libraries.Any(l => l.LibraryId == 1));
+            }
+        }
+
+        #endregion
     }
 }

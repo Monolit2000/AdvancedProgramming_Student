@@ -196,5 +196,131 @@ namespace University.Tests
                 Assert.AreEqual("Email is Required", viewModel["Email"]);
             }
         }
+
+
+        #region Edit 
+
+
+        [TestMethod]
+        public void Edit_StudentOrganization_With_Valid_Data()
+        {
+            using (var context = new UniversityContext(_options))
+            {
+                EditStudentOrganizationViewModel viewModel = new EditStudentOrganizationViewModel(context, _dialogService)
+                {
+                    StudentOrganizationId = 1,
+                    Name = "Updated Organization A",
+                    Advisor = "Updated Advisor A",
+                    President = "Updated President A",
+                    Description = "Updated Description A",
+                    MeetingSchedule = "Updated Schedule A",
+                    Email = "updated_orgA@example.com"
+                };
+
+                viewModel.Save.Execute(null);
+
+                bool organizationExists = context.StudentOrganizations.Any(org => org.Name == "Updated Organization A" && org.Advisor == "Updated Advisor A");
+                Assert.IsTrue(organizationExists);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_StudentOrganization_Without_Name()
+        {
+            using (var context = new UniversityContext(_options))
+            {
+                EditStudentOrganizationViewModel viewModel = new EditStudentOrganizationViewModel(context, _dialogService)
+                {
+                    StudentOrganizationId = 2,
+                    Name = "",
+                    Advisor = "Updated Advisor B",
+                    President = "Updated President B",
+                    Description = "Updated Description B",
+                    MeetingSchedule = "Updated Schedule B",
+                    Email = "updated_orgB@example.com"
+                };
+
+                viewModel.Save.Execute(null);
+
+                bool organizationExists = context.StudentOrganizations.Any(org => org.StudentOrganizationId == 2 && org.Advisor == "Updated Advisor B");
+                Assert.IsFalse(organizationExists);
+                Assert.AreEqual("Name is Required", viewModel["Name"]);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_StudentOrganization_Without_Advisor()
+        {
+            using (var context = new UniversityContext(_options))
+            {
+                EditStudentOrganizationViewModel viewModel = new EditStudentOrganizationViewModel(context, _dialogService)
+                {
+                    StudentOrganizationId = 2,
+                    Name = "Updated Organization B",
+                    Advisor = "",
+                    President = "Updated President B",
+                    Description = "Updated Description B",
+                    MeetingSchedule = "Updated Schedule B",
+                    Email = "updated_orgB@example.com"
+                };
+
+                viewModel.Save.Execute(null);
+
+                bool organizationExists = context.StudentOrganizations.Any(org => org.StudentOrganizationId == 2 && org.Name == "Updated Organization B");
+                Assert.IsFalse(organizationExists);
+                Assert.AreEqual("Advisor is Required", viewModel["Advisor"]);
+            }
+        }
+
+
+        [TestMethod]
+        public void Edit_StudentOrganization_Without_MeetingSchedule()
+        {
+            using (var context = new UniversityContext(_options))
+            {
+                EditStudentOrganizationViewModel viewModel = new EditStudentOrganizationViewModel(context, _dialogService)
+                {
+                    StudentOrganizationId = 2,
+                    Name = "Updated Organization B",
+                    Advisor = "Updated Advisor B",
+                    President = "Updated President B",
+                    Description = "Updated Description B",
+                    MeetingSchedule = "",
+                    Email = "updated_orgB@example.com"
+                };
+
+                viewModel.Save.Execute(null);
+
+                bool organizationExists = context.StudentOrganizations.Any(org => org.StudentOrganizationId == 2 && org.Name == "Updated Organization B");
+                Assert.IsTrue(organizationExists);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_StudentOrganization_Without_Email()
+        {
+            using (var context = new UniversityContext(_options))
+            {
+                EditStudentOrganizationViewModel viewModel = new EditStudentOrganizationViewModel(context, _dialogService)
+                {
+                    StudentOrganizationId = 2,
+                    Name = "Updated Organization B",
+                    Advisor = "Updated Advisor B",
+                    President = "Updated President B",
+                    Description = "Updated Description B",
+                    MeetingSchedule = "Updated Schedule B",
+                    Email = "" // Empty email
+                };
+
+                viewModel.Save.Execute(null);
+
+                bool organizationExists = context.StudentOrganizations.Any(org => org.StudentOrganizationId == 2 && org.Name == "Updated Organization B");
+                Assert.IsFalse(organizationExists);
+                Assert.AreEqual("Email is Required", viewModel["Email"]);
+            }
+        }
+
+
+        #endregion 
     }
 }

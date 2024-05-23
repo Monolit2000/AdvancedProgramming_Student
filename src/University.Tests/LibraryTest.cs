@@ -52,6 +52,8 @@ namespace University.Tests
             }
         }
 
+        #region Add
+
         [TestMethod]
         public void Show_all_books_in_library_viewmodel()
         {
@@ -148,5 +150,145 @@ namespace University.Tests
                 Assert.IsFalse(newLibraryExists);
             }
         }
+
+        #endregion
+
+        #region Edit
+
+        [TestMethod]
+        public void Edit_library_with_valid_data()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                EditLibraryViewModel editLibraryViewModel = new EditLibraryViewModel(context, _dialogService)
+                {
+                    LibraryId = 1,
+                    Name = "Updated Library One",
+                    Address = "Updated Address A",
+                    NumberOfFloors = 4,
+                    NumberOfRooms = 12,
+                    Description = "Updated Description A",
+                    Librarian = "Updated Librarian A"
+                };
+                editLibraryViewModel.Save.Execute(null);
+
+                var updatedLibrary = context.Librarys.FirstOrDefault(l => l.LibraryId == 1);
+
+                Assert.IsNotNull(updatedLibrary);
+                Assert.AreEqual("Updated Library One", updatedLibrary.Name);
+                Assert.AreEqual("Updated Address A", updatedLibrary.Address);
+                Assert.AreEqual(4, updatedLibrary.NumberOfFloors);
+                Assert.AreEqual(12, updatedLibrary.NumberOfRooms);
+                Assert.AreEqual("Updated Description A", updatedLibrary.Description);
+                Assert.AreEqual("Updated Librarian A", updatedLibrary.Librarian);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_library_without_name()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                EditLibraryViewModel editLibraryViewModel = new EditLibraryViewModel(context, _dialogService)
+                {
+                    LibraryId = 2,
+                    Name = "",
+                    Address = "Updated Address B",
+                    NumberOfFloors = 2,
+                    NumberOfRooms = 8,
+                    Description = "Updated Description B",
+                    Librarian = "Updated Librarian B"
+                };
+                editLibraryViewModel.Save.Execute(null);
+
+                var updatedLibrary = context.Librarys.FirstOrDefault(l => l.LibraryId == 2);
+                Assert.IsNotNull(updatedLibrary);
+                Assert.AreNotEqual("Updated Address B", updatedLibrary.Address);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_library_without_address()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                EditLibraryViewModel editLibraryViewModel = new EditLibraryViewModel(context, _dialogService)
+                {
+                    LibraryId = 1,
+                    Name = "Updated Library One",
+                    Address = "",
+                    NumberOfFloors = 4,
+                    NumberOfRooms = 12,
+                    Description = "Updated Description A",
+                    Librarian = "Updated Librarian A"
+                };
+                editLibraryViewModel.Save.Execute(null);
+
+                var updatedLibrary = context.Librarys.FirstOrDefault(l => l.LibraryId == 1);
+                Assert.IsNotNull(updatedLibrary);
+                Assert.AreNotEqual(4, updatedLibrary.NumberOfFloors);
+            }
+        }
+
+
+        [TestMethod]
+        public void Edit_libraries_add_books()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                var library = context.Librarys.Include(l => l.Books).FirstOrDefault(l => l.LibraryId == 1);
+                var newBook = context.Books.FirstOrDefault(b => b.BookId == 3);
+
+                EditLibraryViewModel editLibraryViewModel = new EditLibraryViewModel(context, _dialogService)
+                {
+                    LibraryId = 1,
+                    Name = "Updated Library One",
+                    Address = "Updated Address A",
+                    NumberOfFloors = 4,
+                    NumberOfRooms = 12,
+                    Description = "Updated Description A",
+                    Librarian = "Updated Librarian A"
+                };
+                editLibraryViewModel.AssignedBooks.Add(newBook);
+                editLibraryViewModel.Save.Execute(null);
+
+                var updatedLibrary = context.Librarys.Include(l => l.Books).FirstOrDefault(l => l.LibraryId == 1);
+
+                Assert.IsNotNull(updatedLibrary);
+                Assert.AreEqual(3, updatedLibrary.Books.Count);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_libraries_remove_books()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                var library = context.Librarys.Include(l => l.Books).FirstOrDefault(l => l.LibraryId == 1);
+                var bookToRemove = library.Books.FirstOrDefault(b => b.BookId == 1);
+
+                EditLibraryViewModel editLibraryViewModel = new EditLibraryViewModel(context, _dialogService)
+                {
+                    LibraryId = 1,
+                    Name = "Updated Library One",
+                    Address = "Updated Address A",
+                    NumberOfFloors = 4,
+                    NumberOfRooms = 12,
+                    Description = "Updated Description A",
+                    Librarian = "Updated Librarian A"
+                };
+                editLibraryViewModel.AssignedBooks.Remove(bookToRemove);
+                editLibraryViewModel.Save.Execute(null);
+
+                var updatedLibrary = context.Librarys.Include(l => l.Books).FirstOrDefault(l => l.LibraryId == 1);
+
+                Assert.IsNotNull(updatedLibrary);
+                Assert.AreEqual(1, updatedLibrary.Books.Count);
+            }
+        }
+
+
+        #endregion
+
     }
 }

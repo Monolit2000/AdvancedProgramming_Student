@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using University.Data;
 using University.Interfaces;
@@ -43,16 +44,6 @@ namespace University.Tests
             }
         }
 
-        //[TestMethod]
-        //public void Show_all_students_in_exam_viewmodel()
-        //{
-        //    using UniversityContext context = new UniversityContext(_options);
-        //    {
-        //        AddExamViewModel addExamViewModel = new AddExamViewModel(context, _dialogService);
-        //        bool hasData = addExamViewModel.AvailableStudents.Any();
-        //        Assert.IsTrue(hasData);
-        //    }
-        //}
 
         [TestMethod]
         public void Add_exam_without_students()
@@ -76,30 +67,6 @@ namespace University.Tests
                 Assert.IsTrue(newExamExists);
             }
         }
-
-        //[TestMethod]
-        //public void Add_exam_with_students()
-        //{
-        //    using UniversityContext context = new UniversityContext(_options);
-        //    {
-        //        AddExamViewModel addExamViewModel = new AddExamViewModel(context, _dialogService);
-        //        var student = context.Students.First();
-
-        //        addExamViewModel.CourseCode = "CHEM101";
-        //        addExamViewModel.Date = new DateTime(2024, 5, 18);
-        //        addExamViewModel.StartTime = new TimeSpan(12, 0, 0);
-        //        addExamViewModel.EndTime = new TimeSpan(15, 0, 0);
-        //        addExamViewModel.Location = "Room 104";
-        //        addExamViewModel.Description = "Chemistry Exam";
-        //        addExamViewModel.Professor = "Prof. D";
-        //        addExamViewModel.AssignedStudents.Add(student);
-
-        //        addExamViewModel.Save.Execute(null);
-
-        //        bool newExamExists = context.Exams.Any(e => e.CourseCode == "CHEM101" && e.Description == "Chemistry Exam");
-        //        Assert.IsTrue(newExamExists);
-        //    }
-        //}
 
         [TestMethod]
         public void Add_exam_without_course_code()
@@ -144,5 +111,81 @@ namespace University.Tests
                 Assert.IsFalse(newExamExists);
             }
         }
+
+
+        #region Edit 
+
+        [TestMethod]
+        public void Edit_Exam_Without_Students()
+        {
+            using (var context = new UniversityContext(_options))
+            {
+                var viewModel = new EditExamViewModel(context, _dialogService)
+                {
+                    ExamId = 1,
+                    CourseCode = "Updated CS101",
+                    Date = new DateTime(2024, 5, 15),
+                    StartTime = new TimeSpan(9, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    Location = "Updated Room 101",
+                    Description = "Updated Final Exam",
+                    Professor = "Updated Prof. A",
+                };
+
+                viewModel.Save.Execute(null);
+
+                bool examExists = context.Exams.Any(e => e.ExamId == 1 && e.CourseCode == "Updated CS101" && e.Location == "Updated Room 101");
+                Assert.IsTrue(examExists);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_Exam_Without_Course_Code()
+        {
+            using (var context = new UniversityContext(_options))
+            {
+                var viewModel = new EditExamViewModel(context, _dialogService)
+                {
+                    ExamId = 1,
+                    Date = new DateTime(2024, 5, 15),
+                    StartTime = new TimeSpan(9, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    Location = "Room 101",
+                    Description = "Final Exam",
+                    Professor = "Prof. A"
+                };
+
+                viewModel.Save.Execute(null);
+
+                bool examExists = context.Exams.Any(e => e.ExamId == 1 && e.CourseCode == "Updated CS101");
+                Assert.IsFalse(examExists);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_Exam_Without_Location()
+        {
+            using (var context = new UniversityContext(_options))
+            {
+                var viewModel = new EditExamViewModel(context, _dialogService)
+                {
+                    ExamId = 1,
+                    CourseCode = "Updated CS101",
+                    Date = new DateTime(2024, 5, 15),
+                    StartTime = new TimeSpan(9, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    Description = "Updated Final Exam",
+                    Professor = "Updated Prof. A"
+                };
+
+                viewModel.Save.Execute(null);
+
+                bool examExists = context.Exams.Any(e => e.ExamId == 1 && e.Location == "Updated Room 101");
+                Assert.IsFalse(examExists);
+            }
+        }
+
+
+        #endregion 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Castle.DynamicProxy.Generators;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -83,6 +84,8 @@ namespace University.Tests
                 context.SaveChanges();
             }
         }
+
+        #region AddRegion
 
         [TestMethod]
         public void Show_all_research_projects()
@@ -198,5 +201,131 @@ namespace University.Tests
                 Assert.IsFalse(newResearchProjectExists);
             }
         }
+
+        #endregion
+
+        #region EditTests
+        [TestMethod]
+        public void Edit_research_project_with_valid_data()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                EditResearchProjectViewModel editResearchProjectViewModel = new EditResearchProjectViewModel(context, _dialogService)
+                {
+                    ResearchProjectId = 1,
+                    Title = "Updated Research Project 1",
+                    Description = "Updated description for research project 1",
+                    StartDate = new DateTime(2024, 5, 1),
+                    EndDate = new DateTime(2025, 5, 1),
+                    Budget = 20000.0f
+                };
+                editResearchProjectViewModel.Save.Execute(null);
+
+                var updatedResearchProject = context.ResearchProjects.FirstOrDefault(rp => rp.ResearchProjectId == 1);
+
+                Assert.IsNotNull(updatedResearchProject);
+                Assert.AreEqual("Updated Research Project 1", updatedResearchProject.Title);
+                Assert.AreEqual("Updated description for research project 1", updatedResearchProject.Description);
+                Assert.AreEqual(20000.0f, updatedResearchProject.Budget);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_research_project_without_title()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                EditResearchProjectViewModel editResearchProjectViewModel = new EditResearchProjectViewModel(context, _dialogService)
+                {
+                    ResearchProjectId = 2,
+                    Title = "",
+                    Description = "Updated description without title",
+                    StartDate = new DateTime(2024, 6, 1),
+                    EndDate = new DateTime(2025, 6, 1),
+                    Budget = 25000.0f
+                };
+                editResearchProjectViewModel.Save.Execute(null);
+
+                var updatedResearchProject = context.ResearchProjects.FirstOrDefault(rp => rp.ResearchProjectId == 2);
+                Assert.IsNotNull(updatedResearchProject);
+                Assert.AreNotEqual("Updated description without title", updatedResearchProject.Description);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_research_project_without_description()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                EditResearchProjectViewModel editResearchProjectViewModel = new EditResearchProjectViewModel(context, _dialogService)
+                {
+                    ResearchProjectId = 3,
+                    Title = "Updated Research Project 3",
+                    Description = "",
+                    StartDate = new DateTime(2024, 7, 1),
+                    EndDate = new DateTime(2025, 7, 1),
+                    Budget = 18000.0f
+                };
+                editResearchProjectViewModel.Save.Execute(null);
+
+                var updatedResearchProject = context.ResearchProjects.FirstOrDefault(rp => rp.ResearchProjectId == 3);
+                Assert.IsNotNull(updatedResearchProject);
+                Assert.AreNotEqual(18000.0f, updatedResearchProject.Budget);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_research_project_add_team_members()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                var teamMembers = context.Students.Take(2).ToList();
+
+                EditResearchProjectViewModel editResearchProjectViewModel = new EditResearchProjectViewModel(context, _dialogService)
+                {
+                    ResearchProjectId = 1,
+                    Title = "Updated Research Project with Team",
+                    Description = "Updated description for research project with team",
+                    StartDate = new DateTime(2024, 5, 1),
+                    EndDate = new DateTime(2025, 5, 1),
+                    Budget = 22000.0f,
+                    AssignedStudents = new ObservableCollection<Student>(teamMembers)
+                };
+                editResearchProjectViewModel.Save.Execute(null);
+
+                var updatedResearchProject = context.ResearchProjects.Include(rp => rp.TeamMembers).FirstOrDefault(rp => rp.ResearchProjectId == 1);
+                Assert.IsNotNull(updatedResearchProject);
+                Assert.AreEqual(2, updatedResearchProject.TeamMembers.Count);
+            }
+        }
+
+        [TestMethod]
+        public void Edit_research_project_remove_team_members()
+        {
+            using UniversityContext context = new UniversityContext(_options);
+            {
+                var teamMembers = context.Students.Take(2).ToList();
+                var project = context.ResearchProjects.Include(rp => rp.TeamMembers).FirstOrDefault(rp => rp.ResearchProjectId == 1);
+                project.TeamMembers = teamMembers;
+                context.SaveChanges();
+
+                EditResearchProjectViewModel editResearchProjectViewModel = new EditResearchProjectViewModel(context, _dialogService)
+                {
+                    ResearchProjectId = 1,
+                    Title = "Updated Research Project without Team",
+                    Description = "Updated description for research project without team",
+                    StartDate = new DateTime(2024, 5, 1),
+                    EndDate = new DateTime(2025, 5, 1),
+                    Budget = 22000.0f,
+                    AssignedStudents = new ObservableCollection<Student>()
+                };
+                editResearchProjectViewModel.Save.Execute(null);
+
+                var updatedProject = context.ResearchProjects.Include(rp => rp.TeamMembers).FirstOrDefault(rp => rp.ResearchProjectId == 1);
+                Assert.IsNotNull(updatedProject);
+                Assert.AreEqual(0, updatedProject.TeamMembers.Count);
+            }
+        }
+        #endregion
     }
 }

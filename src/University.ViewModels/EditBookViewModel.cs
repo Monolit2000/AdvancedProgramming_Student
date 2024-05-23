@@ -377,53 +377,6 @@ namespace University.ViewModels
             return _context.Librarys.Local.ToObservableCollection();
         }
 
-
-
-        //private ICommand _back;
-        //public ICommand Back => _back ??= new RelayCommand<object>(NavigateBack);
-
-        //private void NavigateBack(object? obj)
-        //{
-        //    var instance = MainWindowViewModel.Instance();
-        //    if (instance is not null)
-        //    {
-        //        instance.BookSubView = new BookViewModel(_context, _dialogService);
-        //    }
-        //}
-
-        //private ICommand _save;
-        //public ICommand Save => _save ??= new RelayCommand<object>(SaveData);
-
-        //private void SaveData(object? obj)
-        //{
-        //    if (!IsValid())
-        //    {
-        //        Response = "Please complete all required fields";
-        //        return;
-        //    }
-
-        //    var book = _context.Books.Find(BookId);
-        //    if (book is null)
-        //    {
-        //        Response = "Book not found";
-        //        return;
-        //    }
-
-
-        //    book.Title = Title;
-        //    book.Author = Author;
-        //    book.Publisher = Publisher;
-        //    book.PublicationDate = PublicationDate.Value;
-        //    book.ISBN = ISBN;
-        //    book.Genre = Genre;
-        //    book.Description = Description;
-
-        //    _context.Entry(book).State = EntityState.Modified;
-        //    _context.SaveChanges();
-
-        //    Response = "Data Saved";
-        //}
-
         public EditBookViewModel(UniversityContext context, IDialogService dialogService)
         {
             _context = context;
